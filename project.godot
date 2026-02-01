@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
+
 Cards="*uid://pl28ri8i5boq"
 Global="*uid://bveurog1xtndn"
 

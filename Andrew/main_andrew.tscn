@@ -2,14 +2,22 @@
 
 [ext_resource type="Script" uid="uid://d2bgxfi7wlba7" path="res://Andrew/main_andrew.gd" id="1_oiwqt"]
 [ext_resource type="PackedScene" uid="uid://bi28co4wumakd" path="res://UI/bleh/bench.tscn" id="2_oiwqt"]
+[ext_resource type="PackedScene" uid="uid://b5k1rmvlppl4g" path="res://lobby.tscn" id="3_y07dr"]
+[ext_resource type="Script" uid="uid://cuff4vlrmssyn" path="res://Andrew/server_two_point_oh.gd" id="4_y07dr"]
 
 [node name="MainAndrew" type="Node2D" unique_id=152679791]
 script = ExtResource("1_oiwqt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1624760272]
 
-[node name="Bench" parent="CanvasLayer" unique_id=928573134 instance=ExtResource("2_oiwqt")]
-anchors_preset = 12
-anchor_top = 1.0
-grow_vertical = 0
-size_flags_vertical = 8
+[node name="bench" parent="CanvasLayer" unique_id=928573134 instance=ExtResource("2_oiwqt")]
+unique_name_in_owner = true
+visible = false
+
+[node name="lobby" parent="." unique_id=140611318 instance=ExtResource("3_y07dr")]
+unique_name_in_owner = true
+
+[node name="server_two_point_oh" type="Node" parent="." unique_id=147789320 node_paths=PackedStringArray("lobby")]
+unique_name_in_owner = true
+script = ExtResource("4_y07dr")
+lobby = NodePath("../lobby")

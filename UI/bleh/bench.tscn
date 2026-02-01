@@ -36,7 +36,8 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 90)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 texture = ExtResource("2_k1xca")
 expand_mode = 1
 
@@ -73,7 +74,8 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 90)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 texture = ExtResource("2_k1xca")
 expand_mode = 1
 

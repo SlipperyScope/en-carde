@@ -21,25 +21,27 @@ func _ready() -> void:
 	%discard_pile_texture.custom_minimum_size = Vector2(Global.CARD_WIDTH, Global.CARD_HEIGHT)
 	%discard_pile_buffer.custom_minimum_size = Vector2(Global.CARD_WIDTH, Global.CARD_HEIGHT)
 
-	for i in range(Global.CARDS_IN_HAND):
-		var finger = _fingerScene.instantiate() as Finger
-		finger.index = i
-		%finger_container.add_child(finger)
-		_fingers.append(finger)
-		finger.card_selected.connect(_on_card_selected)
-		finger.card_played.connect(_on_card_played)
-
 func SetDrawCount(count:int) -> void:
 	pass
 
 func SetDiscardCount(count:int) -> void:
 	pass
 
+# Creates finger with card and adds it to the bench
+func AddCardToHand(data:CardData) -> void:
+	var finger = _fingerScene.instantiate() as Finger
+	%finger_container.add_child(finger)
+	finger.index = _fingers.size()
+	finger.SetCardID(data.id)
+	_fingers.append(finger)
+	finger.ConfigureCard(data)
+	finger.card_selected.connect(_on_card_selected)
+	finger.card_played.connect(_on_card_played)
+
 func SetCardAt(index:int, data:CardData) -> void:
 	_fingers[index].ConfigureCard(data)
 
-# finger signals
-
+# Clicked on card slot the frist time
 func _on_card_selected(index:int) -> void:
 	print("card selected")
 	for finger in _fingers:
@@ -48,8 +50,8 @@ func _on_card_selected(index:int) -> void:
 		else:
 			finger.Deselect()
 
+# Clicked on card slot the second time
 func _on_card_played(index:int) -> void:
-	print("card played")
 	card_activated.emit(index)
 
 # draw pile signals

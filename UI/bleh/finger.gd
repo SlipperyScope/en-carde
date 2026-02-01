@@ -6,13 +6,13 @@ signal card_played(index:int)
 
 var is_selected:bool = false
 var index:int = -1
+var cardID:String = "xxx"
 
 func _ready() -> void:
 	gui_input.connect(_on_gui_input)
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print("clicked")
 		if is_selected:
 			card_played.emit(index)
 		else:
@@ -28,3 +28,7 @@ func Deselect() -> void:
 
 func ConfigureCard(data:CardData) -> void:
 	%bench_card.ConfigureCard(data)
+
+func SetCardID(id:String) -> void:
+	print("setting id to %s" % id)
+	cardID = id
