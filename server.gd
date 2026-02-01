@@ -1,6 +1,7 @@
 extends Node
 
 @export var lobby: Node
+@export var board: Node
 
 # Server State
 # This stuff is only managed by the server instance (i.e., ID 1)
@@ -51,6 +52,13 @@ func deal(count: int):
 	for i in range(count):
 		dealt.push_back(game_state.deck.pop_front())
 	return dealt
+
+@rpc("call_local", "any_peer", "reliable")
+func test_spawn_card():
+	var maybe_cards = game_state.deck.take_from(1)
+	if len(maybe_cards):
+		var card = maybe_cards[0]
+		board.spawn(card.id)
 
 @rpc("call_local")
 func set_hand(cards):

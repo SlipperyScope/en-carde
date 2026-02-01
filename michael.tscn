@@ -1,12 +1,52 @@
 [gd_scene format=3 uid="uid://bvaiaiidg0517"]
 
 [ext_resource type="PackedScene" uid="uid://b5k1rmvlppl4g" path="res://lobby.tscn" id="2_smgpj"]
+[ext_resource type="Script" uid="uid://bbmh4vbe63rnv" path="res://michael_board.gd" id="2_snu1w"]
 [ext_resource type="Script" uid="uid://csf5bkl6b1rcd" path="res://server.gd" id="3_48l2u"]
 
 [node name="Michael" type="Node2D" unique_id=2034632364]
 
+[node name="Board" type="Control" parent="." unique_id=1458493779 node_paths=PackedStringArray("server")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1281.0
+offset_bottom = 719.0
+script = ExtResource("2_snu1w")
+server = NodePath("../Server")
+metadata/_edit_use_anchors_ = true
+
+[node name="CardSpawner" type="MultiplayerSpawner" parent="Board" unique_id=1538609304]
+_spawnable_scenes = PackedStringArray("uid://dd1fttcxnmtl3")
+spawn_path = NodePath("../VBoxContainer/Cards")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Board" unique_id=1734489833]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -6.0
+offset_right = 4.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Board/VBoxContainer" unique_id=539271643]
+layout_mode = 2
+text = "Spawn a Card"
+
+[node name="Cards" type="HBoxContainer" parent="Board/VBoxContainer" unique_id=722386101]
+unique_name_in_owner = true
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="Lobby" parent="." unique_id=140611318 instance=ExtResource("2_smgpj")]
 
-[node name="Server" type="Node" parent="." unique_id=1828644886 node_paths=PackedStringArray("lobby")]
+[node name="Server" type="Node" parent="." unique_id=1828644886 node_paths=PackedStringArray("lobby", "board")]
 script = ExtResource("3_48l2u")
 lobby = NodePath("../Lobby")
+board = NodePath("../Board")
+
+[connection signal="pressed" from="Board/VBoxContainer/Button" to="Board" method="_on_spawn"]

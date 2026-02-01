@@ -2,6 +2,23 @@
 
 [ext_resource type="Script" uid="uid://yjjnq14f45k2" path="res://michael_card.gd" id="1_m2o1n"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_m2o1n"]
+properties/0/path = NodePath(".:id")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:label")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:top")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:mid")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:bot")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+
 [node name="Card" type="Control" unique_id=528327095]
 custom_minimum_size = Vector2(100, 140)
 layout_mode = 3
@@ -56,3 +73,6 @@ vertical_alignment = 1
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 140.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=944248881]
+replication_config = SubResource("SceneReplicationConfig_m2o1n")
