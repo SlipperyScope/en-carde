@@ -24,8 +24,8 @@ enum CardModifierSlot {
 }
 
 const SELECTED_CARD_OFFSET: float = 20
-const CARDS_IN_HAND: int = 5
-const CARD_HEIGHT: float = 90
-const CARD_WIDTH: float = 60
+const CARDS_IN_HAND: int = 10
+const CARD_HEIGHT: float = 135
+const CARD_WIDTH: float = 90
 const CARD_CLIP_WIDTH: float = 15
 

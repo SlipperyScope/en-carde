@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://bm8b56l72rrah"]
 
 [ext_resource type="Script" uid="uid://d2bgxfi7wlba7" path="res://Andrew/main_andrew.gd" id="1_oiwqt"]
-[ext_resource type="PackedScene" uid="uid://d0g08ctj6yedq" path="res://UI/Overlay.tscn" id="2_i0u03"]
+[ext_resource type="PackedScene" uid="uid://bi28co4wumakd" path="res://UI/bleh/bench.tscn" id="2_oiwqt"]
 
 [node name="MainAndrew" type="Node2D" unique_id=152679791]
 script = ExtResource("1_oiwqt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1624760272]
 
-[node name="Overlay" parent="CanvasLayer" unique_id=900075396 instance=ExtResource("2_i0u03")]
-clip_contents = true
+[node name="Bench" parent="CanvasLayer" unique_id=928573134 instance=ExtResource("2_oiwqt")]
+anchors_preset = 12
+anchor_top = 1.0
+grow_vertical = 0
+size_flags_vertical = 8

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b3tgx0uguad72"]
+
+[ext_resource type="Script" uid="uid://b0lxhom23r5m5" path="res://UI/bleh/bench_card.gd" id="1_ysliu"]
+[ext_resource type="Texture2D" uid="uid://53d1ysabnhdx" path="res://GFX/Placeholder/Stance_Null.png" id="2_7kfx4"]
+[ext_resource type="Texture2D" uid="uid://bnallcsyu6hgp" path="res://quoteArtUnquote/Attack.png" id="2_aspwh"]
+[ext_resource type="Texture2D" uid="uid://cjxo6qjpndave" path="res://GFX/Placeholder/Stance_Blank.png" id="3_m3nng"]
+[ext_resource type="Texture2D" uid="uid://kcriqejcrte3" path="res://quoteArtUnquote/Defend.png" id="3_n64rk"]
+[ext_resource type="Texture2D" uid="uid://dr2d0ibikoe52" path="res://quoteArtUnquote/Exposed.png" id="4_yty5u"]
+[ext_resource type="Texture2D" uid="uid://blmppseywp4o1" path="res://quoteArtUnquote/ActionCards/AttackToExposed.png" id="5_05plh"]
+[ext_resource type="Texture2D" uid="uid://b4bjv34wo256" path="res://quoteArtUnquote/Exposed3.png" id="5_n64rk"]
+[ext_resource type="Texture2D" uid="uid://fpmy2jyvrv28" path="res://GFX/Placeholder/Base_Null.png" id="8_6s67q"]
+[ext_resource type="Texture2D" uid="uid://dchue0rjke6a8" path="res://GFX/Placeholder/Base_Buffer.png" id="9_466e7"]
+[ext_resource type="Texture2D" uid="uid://c1rey4615dt6y" path="res://GFX/Placeholder/Base_Michael.png" id="11_pblrd"]
+
+[node name="BenchCard" type="PanelContainer" unique_id=1838384004]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+script = ExtResource("1_ysliu")
+ModifierTextures = Dictionary[int, Texture2D]({
+0: ExtResource("2_7kfx4"),
+1: ExtResource("3_m3nng"),
+2: ExtResource("4_yty5u"),
+3: ExtResource("2_aspwh"),
+4: ExtResource("3_n64rk"),
+5: ExtResource("5_n64rk")
+})
+GraphicTextures = Dictionary[int, Texture2D]({
+0: ExtResource("8_6s67q"),
+1: ExtResource("9_466e7"),
+2: ExtResource("5_05plh"),
+3: ExtResource("11_pblrd")
+})
+
+[node name="background" type="TextureRect" parent="." unique_id=2141284207]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_05plh")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=321152945]
+layout_mode = 2
+
+[node name="top_texture" type="TextureRect" parent="VBoxContainer" unique_id=162646406]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+
+[node name="middle_texture" type="TextureRect" parent="VBoxContainer" unique_id=1575083299]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+
+[node name="bottom_texture" type="TextureRect" parent="VBoxContainer" unique_id=1949530331]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
