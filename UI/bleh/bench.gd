@@ -2,10 +2,12 @@ extends PanelContainer
 
 var _fingerScene:PackedScene = preload("res://UI/bleh/finger.tscn")
 
+signal card_selected(index:int)
 signal card_activated(index:int)
 signal card_drawn()
 
 var _fingers:Array[Finger] = []
+var _canPlay:bool = false
 
 func _ready() -> void:
 	%draw_pile_hit_area.mouse_entered.connect(_on_draw_pile_mouse_entered)
@@ -41,12 +43,17 @@ func AddCardToHand(data:CardData) -> void:
 func SetCardAt(index:int, data:CardData) -> void:
 	_fingers[index].ConfigureCard(data)
 
+func AllowPlay(canPlay:bool) ->void:
+	_canPlay = canPlay
+	for finger in _fingers:
+		finger.SetCanPlay(canPlay)
+
 # Clicked on card slot the frist time
 func _on_card_selected(index:int) -> void:
-	print("card selected")
 	for finger in _fingers:
 		if finger.index == index:
 			finger.Select()
+			card_selected.emit(index)
 		else:
 			finger.Deselect()
 
@@ -65,7 +72,6 @@ func _on_draw_pile_mouse_exited() -> void:
 func _on_draw_pile_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		card_drawn.emit()
-		print("draw pile clicked")
 
 # discard pile signals
 

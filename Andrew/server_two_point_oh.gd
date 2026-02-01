@@ -49,7 +49,7 @@ func create_game(players):
 	game_state.deck.shuffle()
 
 	for p in game_state.players:
-		p.cards = game_state.deck.take_from(2).map(func ids(c): return c.id)
+		p.cards = game_state.deck.take_from(6).map(func ids(c): return c.id)
 		set_hand.rpc_id(p.id, p.cards)
 
 func deal(count: int):

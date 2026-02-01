@@ -27,6 +27,7 @@ layout_mode = 2
 size_flags_vertical = 8
 
 [node name="DrawPile" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=1072785306]
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/DrawPile" unique_id=383142095]
@@ -65,6 +66,7 @@ layout_mode = 2
 color = Color(1, 1, 1, 0)
 
 [node name="DiscardPile" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=460535061]
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/DiscardPile" unique_id=1831473753]
