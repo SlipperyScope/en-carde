@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://u8d7wjdka42s"]
 
 [ext_resource type="Script" uid="uid://c1xcfs7jo3qsm" path="res://michael_hand.gd" id="1_72q2j"]
+[ext_resource type="AudioStream" uid="uid://dh1y2455hg486" path="res://quoteSoundEffectsUnquote/SwordShing.wav" id="2_72q2j"]
+[ext_resource type="AudioStream" uid="uid://e45nvs8oxxnm" path="res://quoteSoundEffectsUnquote/Crumple.wav" id="3_y4fhx"]
 
 [node name="MichaelHand" type="Control" unique_id=260854209]
 layout_mode = 3
@@ -27,3 +29,9 @@ offset_top = -140.0
 offset_right = 50.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1238679116]
+stream = ExtResource("2_72q2j")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=692634526]
+stream = ExtResource("3_y4fhx")

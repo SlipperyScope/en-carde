@@ -59,6 +59,7 @@ func deal_hands():
 			game_state.deck.shuffle()
 			p.cards.append_array(game_state.deck.take_from(5 - len(p.cards)).map(func ids(c): return c.id))
 		set_hand.rpc_id(p.id, p.cards)
+		play_explosion.rpc_id(p.id)
 
 
 @rpc("call_local", "any_peer", "reliable")
@@ -67,6 +68,12 @@ func test_spawn_card():
 	if len(maybe_cards):
 		var card = maybe_cards[0]
 		board.spawn(card.id)
+
+@rpc("call_local")
+func play_explosion():
+	if my_hand_scene != null:
+		my_hand_scene.play_explosion_sound()
+
 
 @rpc("call_local")
 func set_hand(cards):

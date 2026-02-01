@@ -16,6 +16,9 @@ func present():
 		c.queue_free()
 	render_cards()
 
+func play_explosion_sound():
+	$AudioStreamPlayer2.play()
+
 func render_cards():
 	var card_scene = preload("res://michael_card.tscn")
 
@@ -26,6 +29,7 @@ func render_cards():
 			if controller == null:
 				print("Woah, no controller")
 			else:
+				$AudioStreamPlayer.play()
 				controller.play_card.rpc_id(1, multiplayer.get_unique_id(), c)
 		cs.id = cd.id
 		cs.label = cd.id
