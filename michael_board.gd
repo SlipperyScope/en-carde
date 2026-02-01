@@ -24,3 +24,7 @@ func spawn(id):
 	card.bot = t(cd.bottom.action)
 
 	%Cards.add_child(card, true)
+
+func clear():
+	for c in %Cards.get_children():
+		c.queue_free()
