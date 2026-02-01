@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b5k1rmvlppl4g" path="res://lobby.tscn" id="2_smgpj"]
 [ext_resource type="Script" uid="uid://bbmh4vbe63rnv" path="res://michael_board.gd" id="2_snu1w"]
 [ext_resource type="Script" uid="uid://csf5bkl6b1rcd" path="res://server.gd" id="3_48l2u"]
+[ext_resource type="AudioStream" uid="uid://bv0kmyglnjyyt" path="res://quoteMusicUnquote/Vertigo - Game Jam v1.mp3" id="3_ns2ci"]
 
 [node name="Michael" type="Node2D" unique_id=2034632364]
 
@@ -50,3 +51,8 @@ lobby = NodePath("../Lobby")
 board = NodePath("../Board")
 
 [connection signal="pressed" from="Board/VBoxContainer/Button" to="Board" method="_on_spawn"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1451127390]
+stream = ExtResource("3_ns2ci")
+autoplay = true
+parameters/looping = true
