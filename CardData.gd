@@ -1,5 +1,5 @@
 extends Resource
-class_name CardData 
+class_name CardData
 
 enum Position { TOP, MIDDLE, BOTTOM }
 
@@ -15,6 +15,8 @@ func _get_action_initial(action: CardSlot.ACTIONS) -> String:
 		CardSlot.ACTIONS.MASK: return "_"
 	return "?"
 @export var card_image: Texture
+
+@export var id: String = ""
 
 @export var top: CardSlot = CardSlot.new()
 @export var middle: CardSlot = CardSlot.new()
