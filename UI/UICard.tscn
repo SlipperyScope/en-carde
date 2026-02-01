@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bek1j0iayxat2"]
+
+[ext_resource type="Script" uid="uid://d0no81p6nk6dp" path="res://UI/ui_card.gd" id="1_jsxbs"]
+[ext_resource type="Texture2D" uid="uid://53d1ysabnhdx" path="res://GFX/Placeholder/Stance_Null.png" id="2_0uy6a"]
+[ext_resource type="Texture2D" uid="uid://fpmy2jyvrv28" path="res://GFX/Placeholder/Base_Null.png" id="2_gopfk"]
+[ext_resource type="Texture2D" uid="uid://cjxo6qjpndave" path="res://GFX/Placeholder/Stance_Blank.png" id="3_v8w3h"]
+[ext_resource type="Texture2D" uid="uid://cplbbodlh5yxb" path="res://GFX/Placeholder/Stance_VUL.png" id="4_dbg2a"]
+[ext_resource type="Texture2D" uid="uid://7t77ih1fn1b4" path="res://GFX/Placeholder/Stance_ATK.png" id="5_5h8j7"]
+[ext_resource type="Texture2D" uid="uid://bc7bh5o1sxihf" path="res://GFX/Placeholder/Stance_DEF.png" id="6_qg8so"]
+[ext_resource type="Texture2D" uid="uid://uf5k8bcinoxb" path="res://GFX/Placeholder/Stance_MICHAEL.png" id="7_7yfrl"]
+[ext_resource type="Texture2D" uid="uid://dchue0rjke6a8" path="res://GFX/Placeholder/Base_Buffer.png" id="9_lax5f"]
+[ext_resource type="Texture2D" uid="uid://cgfycoqsd4yit" path="res://GFX/Placeholder/Base_Blank.png" id="10_2sfba"]
+[ext_resource type="Texture2D" uid="uid://c1rey4615dt6y" path="res://GFX/Placeholder/Base_Michael.png" id="11_1s47x"]
+[ext_resource type="Texture2D" uid="uid://dylb3n0npuly7" path="res://GFX/Placeholder/Base_Back.png" id="12_tbnge"]
+
+[node name="UiCard" type="PanelContainer" unique_id=1359962777]
+custom_minimum_size = Vector2(60, 90)
+offset_right = 60.0
+offset_bottom = 90.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+mouse_filter = 1
+script = ExtResource("1_jsxbs")
+ModifierTextures = Dictionary[int, Texture2D]({
+0: ExtResource("2_0uy6a"),
+1: ExtResource("3_v8w3h"),
+2: ExtResource("4_dbg2a"),
+3: ExtResource("5_5h8j7"),
+4: ExtResource("6_qg8so"),
+5: ExtResource("7_7yfrl")
+})
+GraphicTextures = Dictionary[int, Texture2D]({
+0: ExtResource("2_gopfk"),
+1: ExtResource("9_lax5f"),
+2: ExtResource("10_2sfba"),
+3: ExtResource("11_1s47x")
+})
+CardBackTexture = ExtResource("12_tbnge")
+
+[node name="card_graphic" type="TextureRect" parent="." unique_id=291441158]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_gopfk")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=78872852]
+layout_mode = 2
+alignment = 1
+
+[node name="modifier_top" type="TextureRect" parent="VBoxContainer" unique_id=1975244392]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+
+[node name="modifier_middle" type="TextureRect" parent="VBoxContainer" unique_id=372449858]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+
+[node name="modifier_bottom" type="TextureRect" parent="VBoxContainer" unique_id=898485466]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bm8b56l72rrah"]
+
+[ext_resource type="Script" uid="uid://d2bgxfi7wlba7" path="res://Andrew/main_andrew.gd" id="1_oiwqt"]
+[ext_resource type="PackedScene" uid="uid://d0g08ctj6yedq" path="res://UI/Overlay.tscn" id="2_i0u03"]
+
+[node name="MainAndrew" type="Node2D" unique_id=152679791]
+script = ExtResource("1_oiwqt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1624760272]
+
+[node name="Overlay" parent="CanvasLayer" unique_id=900075396 instance=ExtResource("2_i0u03")]
+clip_contents = true

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dj5q527luccpd"]
+
+[ext_resource type="Script" uid="uid://bv73sy874sy8w" path="res://UI/CardStack.gd" id="1_b6l70"]
+
+[node name="CardStack" type="HBoxContainer" unique_id=49140534]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 0
+script = ExtResource("1_b6l70")

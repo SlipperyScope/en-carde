@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://d0g08ctj6yedq"]
+
+[ext_resource type="Texture2D" uid="uid://cwal74ynh7lkj" path="res://GFX/Placeholder/CardTable.png" id="1_diepb"]
+[ext_resource type="Script" uid="uid://d0pbb7lirtkf5" path="res://UI/overlay.gd" id="1_maofk"]
+[ext_resource type="Texture2D" uid="uid://4qouxk1wklvg" path="res://GFX/Placeholder/Border.png" id="2_maofk"]
+[ext_resource type="PackedScene" uid="uid://dj5q527luccpd" path="res://UI/CardStack.tscn" id="3_2ajvm"]
+
+[node name="Overlay" type="PanelContainer" unique_id=900075396]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_maofk")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1457067068]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1976880346]
+layout_mode = 2
+
+[node name="StageBuffer" type="ColorRect" parent="MarginContainer/VBoxContainer" unique_id=1615766294]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(1, 1, 1, 0.09803922)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=694153202]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=436635775]
+layout_mode = 2
+theme_override_constants/margin_bottom = 18
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer" unique_id=2125358771]
+custom_minimum_size = Vector2(0, 138.245)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="TrayGraphic" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/MarginContainer2" unique_id=1435834293]
+layout_mode = 2
+texture = ExtResource("1_diepb")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer" unique_id=1705527393]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/MarginContainer" unique_id=1187564467]
+layout_mode = 2
+
+[node name="DrawPileContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=1156079240]
+layout_mode = 2
+
+[node name="draw_pile" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/MarginContainer/HBoxContainer/DrawPileContainer" unique_id=49140534 instance=ExtResource("3_2ajvm")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+
+[node name="HandContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=616912045]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="hand_slots" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/MarginContainer/HBoxContainer/HandContainer" unique_id=30791006]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="DiscardPileContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=1859557332]
+layout_mode = 2
+
+[node name="discard_pile" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/MarginContainer/HBoxContainer/DiscardPileContainer" unique_id=859071692 instance=ExtResource("3_2ajvm")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Border" type="TextureRect" parent="." unique_id=1438445635]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_maofk")

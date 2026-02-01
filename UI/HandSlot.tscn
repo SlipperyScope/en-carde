@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://chr3qlcdxdowg"]
+
+[ext_resource type="Script" uid="uid://belafd8y4xlc2" path="res://UI/hand_slot.gd" id="1_mn1f6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mn1f6"]
+
+[node name="HandSlot" type="PanelContainer" unique_id=1034209909]
+offset_right = 60.0
+offset_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mn1f6")
+script = ExtResource("1_mn1f6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=929118341]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="card_container" type="PanelContainer" parent="VBoxContainer" unique_id=940317953]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+
+[node name="offsetter" type="ColorRect" parent="VBoxContainer" unique_id=74996428]
+unique_name_in_owner = true
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="click_area" type="Control" parent="." unique_id=455161315]
+unique_name_in_owner = true
+layout_mode = 2
