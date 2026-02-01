@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dd1fttcxnmtl3"]
+
+[ext_resource type="Script" uid="uid://yjjnq14f45k2" path="res://michael_card.gd" id="1_m2o1n"]
+
+[node name="Card" type="Control" unique_id=528327095]
+custom_minimum_size = Vector2(100, 140)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_m2o1n")
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=259368235]
+custom_minimum_size = Vector2(100, 140.001)
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 46.667
+color = Color(0.87878853, 0.86987215, 0.9277727, 1)
+
+[node name="Top" type="ColorRect" parent="." unique_id=1497939682]
+custom_minimum_size = Vector2(20, 46.667)
+layout_mode = 0
+offset_left = 80.0
+offset_right = 100.0
+offset_bottom = 46.667
+color = Color(0.30588236, 0.77254903, 0.93333334, 1)
+
+[node name="Mid" type="ColorRect" parent="." unique_id=1712428893]
+custom_minimum_size = Vector2(20, 46.667)
+layout_mode = 0
+offset_left = 80.0
+offset_top = 46.0
+offset_right = 100.0
+offset_bottom = 93.0
+color = Color(0.654902, 0.50980395, 0.47058824, 1)
+
+[node name="Bot" type="ColorRect" parent="." unique_id=2034408519]
+custom_minimum_size = Vector2(20, 46.667)
+layout_mode = 0
+offset_left = 80.0
+offset_top = 93.0
+offset_right = 100.0
+offset_bottom = 140.0
+color = Color(0.9372549, 0.19215687, 0.20392157, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1840760368]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 57.000023
+offset_right = 96.0
+offset_bottom = 80.00002
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Poop"
+horizontal_alignment = 1
+vertical_alignment = 1

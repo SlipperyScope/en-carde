@@ -2,3 +2,5 @@
 .vscode/
 .godot/
 /android/
+*.exe
+*.pck
