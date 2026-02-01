@@ -1,9 +1,9 @@
 ﻿extends Resource
-class_name DeckManager
+class_name CardFactory
 
 const CARD_DICT_PATH = "res://cardDict.json"
 
-static func load_deck() -> Array[CardData]:
+static func load_deck_data() -> Array[CardData]:
 	var deck: Array[CardData] = []
 	
 	if not FileAccess.file_exists(CARD_DICT_PATH):
@@ -34,22 +34,29 @@ static func load_deck() -> Array[CardData]:
 	return deck
 
 static func create_card_from_info(info: Dictionary) -> CardData:
+	return create_card(
+		{"action": info.get("top", "ATTACK"), "strength": info.get("top_strength", 1)},
+		{"action": info.get("middle", "ATTACK"), "strength": info.get("middle_strength", 1)},
+		{"action": info.get("bottom", "ATTACK"), "strength": info.get("bottom_strength", 1)}
+	)
+
+static func create_card(top: Dictionary, middle: Dictionary, bottom: Dictionary) -> CardData:
 	var card = CardData.new()
 	
-	set_slot_from_action_str(card, CardData.Position.TOP, info.get("top", "ATTACK"))
-	set_slot_from_action_str(card, CardData.Position.MIDDLE, info.get("middle", "ATTACK"))
-	set_slot_from_action_str(card, CardData.Position.BOTTOM, info.get("bottom", "ATTACK"))
+	set_slot_from_action_str(card, CardData.Position.TOP, top.get("action", "ATTACK"), top.get("strength", 1))
+	set_slot_from_action_str(card, CardData.Position.MIDDLE, middle.get("action", "ATTACK"), middle.get("strength", 1))
+	set_slot_from_action_str(card, CardData.Position.BOTTOM, bottom.get("action", "ATTACK"), bottom.get("strength", 1))
 	
 	return card
 
-static func set_slot_from_action_str(card: CardData, pos: CardData.Position, action_str: String) -> void:
+static func set_slot_from_action_str(card: CardData, pos: CardData.Position, action_str: String, strength: int = 1) -> void:
 	var action_enum = CardSlot.ACTIONS.ATTACK
 	if CardSlot.ACTIONS.has(action_str):
 		action_enum = CardSlot.ACTIONS[action_str]
 	else:
 		push_warning("Unknown action: " + action_str + " using ATTACK as fallback")
 		
-	card.set_slot(pos, action_enum, 1) # Default strength to 1
+	card.set_slot(pos, action_enum, strength)
 	
 	# Load image based on action
 	var image_path = "res://quoteArtUnquote/"
