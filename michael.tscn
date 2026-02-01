@@ -5,6 +5,10 @@
 [node name="Michael" type="Node2D" unique_id=2034632364]
 script = ExtResource("1_64ijv")
 
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=128949480]
+_spawnable_scenes = PackedStringArray("uid://dd1fttcxnmtl3")
+spawn_path = NodePath("..")
+
 [node name="Menu" type="Control" parent="." unique_id=645365416]
 process_mode = 3
 layout_mode = 3
