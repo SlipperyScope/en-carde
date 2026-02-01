@@ -50,9 +50,9 @@ script = ExtResource("3_48l2u")
 lobby = NodePath("../Lobby")
 board = NodePath("../Board")
 
-[connection signal="pressed" from="Board/VBoxContainer/Button" to="Board" method="_on_spawn"]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1451127390]
 stream = ExtResource("3_ns2ci")
 autoplay = true
 parameters/looping = true
+
+[connection signal="pressed" from="Board/VBoxContainer/Button" to="Board" method="_on_spawn"]
