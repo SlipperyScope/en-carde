@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bvaiaiidg0517"]
+
+[ext_resource type="Script" uid="uid://bwq6anmm75675" path="res://michael.gd" id="1_64ijv"]
+
+[node name="Michael" type="Node2D" unique_id=2034632364]
+script = ExtResource("1_64ijv")
+
+[node name="Menu" type="Control" parent="." unique_id=645365416]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1276.0
+offset_bottom = 716.0
+
+[node name="Buttons" type="VBoxContainer" parent="Menu" unique_id=190442912]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.5
+offset_top = -69.5
+offset_right = 265.5
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Host" type="Button" parent="Menu/Buttons" unique_id=1828435506]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Host"
+
+[node name="Address" type="TextEdit" parent="Menu/Buttons" unique_id=873638031]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "127.0.0.1"
+
+[node name="Join" type="Button" parent="Menu/Buttons" unique_id=900607745]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "Join
+"
+
+[connection signal="pressed" from="Menu/Buttons/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Menu/Buttons/Join" to="." method="_on_connect_pressed"]
