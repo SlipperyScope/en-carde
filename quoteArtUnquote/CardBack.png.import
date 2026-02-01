@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blmppseywp4o1"
-path="res://.godot/imported/AttackToExposed.png-1b89ec322e6e58f4bb61173f11c0b692.ctex"
+uid="uid://ct23xulo7m37f"
+path="res://.godot/imported/CardBack.png-784aeac50e723218bd7e8dc3676f0cf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://quoteArtUnquote/ActionCards/AttackToExposed.png"
-dest_files=["res://.godot/imported/AttackToExposed.png-1b89ec322e6e58f4bb61173f11c0b692.ctex"]
+source_file="res://quoteArtUnquote/CardBack.png"
+dest_files=["res://.godot/imported/CardBack.png-784aeac50e723218bd7e8dc3676f0cf6.ctex"]
 
 [params]
 

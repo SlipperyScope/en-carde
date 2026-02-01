@@ -11,7 +11,7 @@ var max_players = 2
 var game_state = {
 	"players_loaded": 0,
 	"players": [],
-	"current_player": 0,
+	"current_player": 1,
 	"deck": [],
 }
 
@@ -65,6 +65,27 @@ func _on_connect_pressed():
 	peer.create_client(addr, PORT)
 	multiplayer.multiplayer_peer = peer
 
+@rpc("call_local", "any_peer", "reliable")
+func play_card(pid: int, card: int):
+	# Verify that it is pid's turn
+	print("Attempting to play... %s" % card)
+	if pid != game_state.current_player:
+		print("Not your turn, player %s" % pid)
+		return
+	var curr = game_state.players.find_custom(func f(p): return p.id == pid)
+	if curr != -1:
+		var currp = game_state.players[curr]
+		var cidx = currp.cards.find_custom(func f(c): return c.id == card)
+		# Verify that pid has this card
+		if cidx == -1:
+			print("You don't have this card")
+		else:
+			# Remove card from pid's hand and re-render
+			print("Player %s is playing this card" % pid)
+			print(Cards.CARDS[card])
+			# Put the card in the game area
+			# Mark the new current player
+			game_state.current_player = game_state.players[(curr + 1) % len(game_state.players)].id
 
 func deal(count: int):
 	var dealt = []
@@ -77,6 +98,7 @@ func set_hand(cards):
 	var Player = preload("res://michael_hand.tscn")
 	if my_hand_scene == null:
 		my_hand_scene = Player.instantiate()
+		my_hand_scene.controller = self
 		add_child(my_hand_scene)
 
 	my_hand = cards

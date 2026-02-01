@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var cards := []
+@export var controller: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +19,11 @@ func present():
 		print(c)
 		var cs = card_scene.instantiate() as Control
 		var on_click = func():
-			print("Pressed %s cardbb" % c.name)
+			if controller == null:
+				print("Woah, no controller")
+			else:
+				print("Pressed %s cardbb" % c.name)
+				controller.play_card.rpc_id(1, multiplayer.get_unique_id(), c.id)
 		cs.id = c.id
 		cs.label = c.name
 		cs.top = c.top
