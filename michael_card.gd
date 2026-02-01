@@ -7,7 +7,7 @@ extends Control
 @export var bot := 0
 
 var colors = [
-	'e0deed',
+	'00000000',
 	'ef3134',
 	'4ec5ee',
 	'a78278',
