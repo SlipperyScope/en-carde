@@ -1,0 +1,30 @@
+﻿{
+  "cards": [
+    { "top": "ATTACK", "middle": "ATTACK", "bottom": "ATTACK", "count": 1 },
+    { "top": "ATTACK", "middle": "ATTACK", "bottom": "OPEN", "count": 1 },
+    { "top": "ATTACK", "middle": "ATTACK", "bottom": "MASK", "count": 1 },
+    { "top": "ATTACK", "middle": "MASK", "bottom": "ATTACK", "count": 1 },
+    { "top": "ATTACK", "middle": "MASK", "bottom": "DEFEND", "count": 2 },
+    { "top": "ATTACK", "middle": "MASK", "bottom": "OPEN", "count": 1 },
+    { "top": "ATTACK", "middle": "MASK", "bottom": "MASK", "count": 3 },
+    { "top": "DEFEND", "middle": "DEFEND", "bottom": "DEFEND", "count": 1 },
+    { "top": "DEFEND", "middle": "DEFEND", "bottom": "MASK", "count": 1 },
+    { "top": "DEFEND", "middle": "OPEN", "bottom": "DEFEND", "count": 1 },
+    { "top": "DEFEND", "middle": "OPEN", "bottom": "MASK", "count": 1 },
+    { "top": "DEFEND", "middle": "MASK", "bottom": "DEFEND", "count": 2 },
+    { "top": "OPEN", "middle": "OPEN", "bottom": "OPEN", "count": 1 },
+    { "top": "OPEN", "middle": "MASK", "bottom": "ATTACK", "count": 1 },
+    { "top": "OPEN", "middle": "MASK", "bottom": "DEFEND", "count": 1 },
+    { "top": "OPEN", "middle": "MASK", "bottom": "OPEN", "count": 1 },
+    { "top": "OPEN", "middle": "MASK", "bottom": "MASK", "count": 1 },
+    { "top": "MASK", "middle": "ATTACK", "bottom": "ATTACK", "count": 1 },
+    { "top": "MASK", "middle": "ATTACK", "bottom": "DEFEND", "count": 1 },
+    { "top": "MASK", "middle": "ATTACK", "bottom": "MASK", "count": 4 },
+    { "top": "MASK", "middle": "DEFEND", "bottom": "ATTACK", "count": 1 },
+    { "top": "MASK", "middle": "DEFEND", "bottom": "OPEN", "count": 1 },
+    { "top": "MASK", "middle": "DEFEND", "bottom": "MASK", "count": 1 },
+    { "top": "MASK", "middle": "OPEN", "bottom": "MASK", "count": 1 },
+    { "top": "MASK", "middle": "MASK", "bottom": "ATTACK", "count": 2 },
+    { "top": "MASK", "middle": "MASK", "bottom": "DEFEND", "count": 2 }
+  ]
+}
