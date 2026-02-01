@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" uid="uid://c1xcfs7jo3qsm" path="res://michael_hand.gd" id="1_72q2j"]
 
-[node name="MichaelHand" type="Node2D" unique_id=273473013]
+[node name="MichaelHand" type="Control" unique_id=260854209]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
 script = ExtResource("1_72q2j")
 
 [node name="Hand" type="Control" parent="." unique_id=1721949338]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
+mouse_filter = 2
 
 [node name="Tray" type="HBoxContainer" parent="Hand" unique_id=697932475]
 unique_name_in_owner = true
