@@ -1,264 +1,30 @@
 ﻿{
   "cards": [
-    {
-      "id": "card_0",
-      "name": "A | A | A",
-      "slots": {
-        "top": { "action": "ATTACK", "value": 1 },
-        "middle": { "action": "ATTACK", "value": 1 },
-        "bottom": { "action": "ATTACK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_2",
-      "name": "A | A | O",
-      "slots": {
-        "top": { "action": "ATTACK", "value": 1 },
-        "middle": { "action": "ATTACK", "value": 1 },
-        "bottom": { "action": "OPEN", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_3",
-      "name": "A | A | _",
-      "slots": {
-        "top": { "action": "ATTACK", "value": 1 },
-        "middle": { "action": "ATTACK", "value": 1 },
-        "bottom": { "action": "MASK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_12",
-      "name": "A | _ | A",
-      "slots": {
-        "top": { "action": "ATTACK", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "ATTACK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_13",
-      "name": "A | _ | D",
-      "slots": {
-        "top": { "action": "ATTACK", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "DEFEND", "value": 1 }
-      },
-      "count": 2
-    },
-    {
-      "id": "card_14",
-      "name": "A | _ | O",
-      "slots": {
-        "top": { "action": "ATTACK", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "OPEN", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_15",
-      "name": "A | _ | _",
-      "slots": {
-        "top": { "action": "ATTACK", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "MASK", "value": 1 }
-      },
-      "count": 3
-    },
-    {
-      "id": "card_21",
-      "name": "D | D | D",
-      "slots": {
-        "top": { "action": "DEFEND", "value": 1 },
-        "middle": { "action": "DEFEND", "value": 1 },
-        "bottom": { "action": "DEFEND", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_23",
-      "name": "D | D | _",
-      "slots": {
-        "top": { "action": "DEFEND", "value": 1 },
-        "middle": { "action": "DEFEND", "value": 1 },
-        "bottom": { "action": "MASK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_25",
-      "name": "D | O | D",
-      "slots": {
-        "top": { "action": "DEFEND", "value": 1 },
-        "middle": { "action": "OPEN", "value": 1 },
-        "bottom": { "action": "DEFEND", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_27",
-      "name": "D | O | _",
-      "slots": {
-        "top": { "action": "DEFEND", "value": 1 },
-        "middle": { "action": "OPEN", "value": 1 },
-        "bottom": { "action": "MASK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_29",
-      "name": "D | _ | D",
-      "slots": {
-        "top": { "action": "DEFEND", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "DEFEND", "value": 1 }
-      },
-      "count": 2
-    },
-    {
-      "id": "card_42",
-      "name": "O | O | O",
-      "slots": {
-        "top": { "action": "OPEN", "value": 1 },
-        "middle": { "action": "OPEN", "value": 1 },
-        "bottom": { "action": "OPEN", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_44",
-      "name": "O | _ | A",
-      "slots": {
-        "top": { "action": "OPEN", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "ATTACK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_45",
-      "name": "O | _ | D",
-      "slots": {
-        "top": { "action": "OPEN", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "DEFEND", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_46",
-      "name": "O | _ | O",
-      "slots": {
-        "top": { "action": "OPEN", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "OPEN", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_47",
-      "name": "O | _ | _",
-      "slots": {
-        "top": { "action": "OPEN", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "MASK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_48",
-      "name": "_ | A | A",
-      "slots": {
-        "top": { "action": "MASK", "value": 1 },
-        "middle": { "action": "ATTACK", "value": 1 },
-        "bottom": { "action": "ATTACK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_49",
-      "name": "_ | A | D",
-      "slots": {
-        "top": { "action": "MASK", "value": 1 },
-        "middle": { "action": "ATTACK", "value": 1 },
-        "bottom": { "action": "DEFEND", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_51",
-      "name": "_ | A | _",
-      "slots": {
-        "top": { "action": "MASK", "value": 1 },
-        "middle": { "action": "ATTACK", "value": 1 },
-        "bottom": { "action": "MASK", "value": 1 }
-      },
-      "count": 4
-    },
-    {
-      "id": "card_52",
-      "name": "_ | D | A",
-      "slots": {
-        "top": { "action": "MASK", "value": 1 },
-        "middle": { "action": "DEFEND", "value": 1 },
-        "bottom": { "action": "ATTACK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_54",
-      "name": "_ | D | O",
-      "slots": {
-        "top": { "action": "MASK", "value": 1 },
-        "middle": { "action": "DEFEND", "value": 1 },
-        "bottom": { "action": "OPEN", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_55",
-      "name": "_ | D | _",
-      "slots": {
-        "top": { "action": "MASK", "value": 1 },
-        "middle": { "action": "DEFEND", "value": 1 },
-        "bottom": { "action": "MASK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_59",
-      "name": "_ | O | _",
-      "slots": {
-        "top": { "action": "MASK", "value": 1 },
-        "middle": { "action": "OPEN", "value": 1 },
-        "bottom": { "action": "MASK", "value": 1 }
-      },
-      "count": 1
-    },
-    {
-      "id": "card_60",
-      "name": "_ | _ | A",
-      "slots": {
-        "top": { "action": "MASK", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "ATTACK", "value": 1 }
-      },
-      "count": 2
-    },
-    {
-      "id": "card_61",
-      "name": "_ | _ | D",
-      "slots": {
-        "top": { "action": "MASK", "value": 1 },
-        "middle": { "action": "MASK", "value": 1 },
-        "bottom": { "action": "DEFEND", "value": 1 }
-      },
-      "count": 2
-    }
+    { "top": "ATTACK", "middle": "ATTACK", "bottom": "ATTACK", "count": 1 },
+    { "top": "ATTACK", "middle": "ATTACK", "bottom": "OPEN", "count": 1 },
+    { "top": "ATTACK", "middle": "ATTACK", "bottom": "MASK", "count": 1 },
+    { "top": "ATTACK", "middle": "MASK", "bottom": "ATTACK", "count": 1 },
+    { "top": "ATTACK", "middle": "MASK", "bottom": "DEFEND", "count": 2 },
+    { "top": "ATTACK", "middle": "MASK", "bottom": "OPEN", "count": 1 },
+    { "top": "ATTACK", "middle": "MASK", "bottom": "MASK", "count": 3 },
+    { "top": "DEFEND", "middle": "DEFEND", "bottom": "DEFEND", "count": 1 },
+    { "top": "DEFEND", "middle": "DEFEND", "bottom": "MASK", "count": 1 },
+    { "top": "DEFEND", "middle": "OPEN", "bottom": "DEFEND", "count": 1 },
+    { "top": "DEFEND", "middle": "OPEN", "bottom": "MASK", "count": 1 },
+    { "top": "DEFEND", "middle": "MASK", "bottom": "DEFEND", "count": 2 },
+    { "top": "OPEN", "middle": "OPEN", "bottom": "OPEN", "count": 1 },
+    { "top": "OPEN", "middle": "MASK", "bottom": "ATTACK", "count": 1 },
+    { "top": "OPEN", "middle": "MASK", "bottom": "DEFEND", "count": 1 },
+    { "top": "OPEN", "middle": "MASK", "bottom": "OPEN", "count": 1 },
+    { "top": "OPEN", "middle": "MASK", "bottom": "MASK", "count": 1 },
+    { "top": "MASK", "middle": "ATTACK", "bottom": "ATTACK", "count": 1 },
+    { "top": "MASK", "middle": "ATTACK", "bottom": "DEFEND", "count": 1 },
+    { "top": "MASK", "middle": "ATTACK", "bottom": "MASK", "count": 4 },
+    { "top": "MASK", "middle": "DEFEND", "bottom": "ATTACK", "count": 1 },
+    { "top": "MASK", "middle": "DEFEND", "bottom": "OPEN", "count": 1 },
+    { "top": "MASK", "middle": "DEFEND", "bottom": "MASK", "count": 1 },
+    { "top": "MASK", "middle": "OPEN", "bottom": "MASK", "count": 1 },
+    { "top": "MASK", "middle": "MASK", "bottom": "ATTACK", "count": 2 },
+    { "top": "MASK", "middle": "MASK", "bottom": "DEFEND", "count": 2 }
   ]
 }
