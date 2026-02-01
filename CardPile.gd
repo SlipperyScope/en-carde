@@ -23,6 +23,15 @@ func transfer_card(card: CardData, target_pile: CardPile) -> bool:
 		return true
 	return false
 
+# Inside of you there are two wolves
+func take_from(amount: int = 1) -> Array[CardData]:
+	var drawn_cards: Array[CardData] = []
+	for i in range(amount):
+		if cards.is_empty():
+			break
+		drawn_cards.append(cards.pop_back())
+	return drawn_cards
+
 func draw_from(source_pile: CardPile, amount: int = 1) -> Array[CardData]:
 	var drawn_cards: Array[CardData] = []
 	for i in range(amount):
