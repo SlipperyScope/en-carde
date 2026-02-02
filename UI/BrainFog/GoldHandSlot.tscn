@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://cgbsnno8k241a"]
+
+[ext_resource type="Script" uid="uid://bhpkbq804kuf8" path="res://UI/BrainFog/GoldHandSlot.gd" id="1_76njg"]
+[ext_resource type="Texture2D" uid="uid://dbjqlwqp8e4kc" path="res://GFX/GoldGFX/Cards/Stance_Attack.png" id="2_j3xhv"]
+[ext_resource type="Texture2D" uid="uid://duf66t7ouv76i" path="res://GFX/GoldGFX/Cards/CardFront.png" id="2_sa7ey"]
+[ext_resource type="Texture2D" uid="uid://ylmbmpv3ogpf" path="res://GFX/GoldGFX/Cards/Graphic_AttackHigh.png" id="3_4ndfn"]
+[ext_resource type="Texture2D" uid="uid://x0fwntscm150" path="res://GFX/GoldGFX/Cards/Stance_Defend.png" id="3_sa7ey"]
+[ext_resource type="Texture2D" uid="uid://ctroo84q58qjh" path="res://GFX/GoldGFX/Cards/Stance_Vulnerable.png" id="4_4ndfn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7wq2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sa7ey"]
+
+[sub_resource type="Animation" id="Animation_frbri"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Top:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Bottom:size_flags_stretch_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4ndfn"]
+resource_name = "bump_up"
+length = 0.05
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Top:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 2.000001),
+"update": 0,
+"values": [1.0, 0.75]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Bottom:size_flags_stretch_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 2.0000002),
+"update": 0,
+"values": [0.0, 0.25]
+}
+
+[sub_resource type="Animation" id="Animation_ltu4i"]
+resource_name = "slide_down"
+length = 0.1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Top:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(2, 2.000001),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Bottom:size_flags_stretch_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(2, 2.0000002),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mfs4m"]
+resource_name = "slide_up"
+length = 0.2
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Top:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 2.000001),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Bottom:size_flags_stretch_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 2.0000002),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5bogr"]
+_data = {
+&"RESET": SubResource("Animation_frbri"),
+&"bump_up": SubResource("Animation_4ndfn"),
+&"slide_down": SubResource("Animation_ltu4i"),
+&"slide_up": SubResource("Animation_mfs4m")
+}
+
+[node name="GoldHandSlot" type="PanelContainer" unique_id=2123632711]
+anchors_preset = -1
+offset_right = 606.0
+offset_bottom = 1000.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7wq2s")
+script = ExtResource("1_76njg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2136865623]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Top" type="Panel" parent="VBoxContainer" unique_id=2004063003]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Card" type="PanelContainer" parent="VBoxContainer" unique_id=1075660148]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_sa7ey")
+
+[node name="CardBackground" type="TextureRect" parent="VBoxContainer/Card" unique_id=1562397518]
+layout_mode = 2
+texture = ExtResource("2_sa7ey")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="CardGraphic" type="TextureRect" parent="VBoxContainer/Card" unique_id=1155232255]
+layout_mode = 2
+texture = ExtResource("3_4ndfn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Stances" type="GridContainer" parent="VBoxContainer/Card" unique_id=156085655]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="TopStance" type="TextureRect" parent="VBoxContainer/Card/Stances" unique_id=1502202310]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_j3xhv")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MiddleStance" type="TextureRect" parent="VBoxContainer/Card/Stances" unique_id=1927420181]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_sa7ey")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BottomStance" type="TextureRect" parent="VBoxContainer/Card/Stances" unique_id=2137401360]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_4ndfn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Bottom" type="Panel" parent="VBoxContainer" unique_id=209825063]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+mouse_filter = 1
+
+[node name="SlideAnimation" type="AnimationPlayer" parent="." unique_id=1269190029]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_5bogr")
