@@ -116,6 +116,11 @@ tracks/1/keys = {
 resource_name = "slide_up"
 length = 0.2
 step = 0.0167
+markers = [{
+"color": Color(1, 0, 1, 1),
+"name": &"bump_height",
+"time": 0.1
+}]
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -147,6 +152,44 @@ _data = {
 &"bump_up": SubResource("Animation_4ndfn"),
 &"slide_down": SubResource("Animation_ltu4i"),
 &"slide_up": SubResource("Animation_mfs4m")
+}
+
+[sub_resource type="Animation" id="Animation_sa7ey"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Card:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9.0]
+}
+
+[sub_resource type="Animation" id="Animation_7wq2s"]
+resource_name = "expand"
+length = 0.1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Card:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [0.0, 9.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8ukc"]
+_data = {
+&"RESET": SubResource("Animation_sa7ey"),
+&"expand": SubResource("Animation_7wq2s")
 }
 
 [node name="GoldHandSlot" type="PanelContainer" unique_id=2123632711]
@@ -200,7 +243,6 @@ layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_j3xhv")
 expand_mode = 3
-stretch_mode = 4
 
 [node name="MiddleStance" type="TextureRect" parent="VBoxContainer/Card/Stances" unique_id=1927420181]
 unique_name_in_owner = true
@@ -208,7 +250,6 @@ layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("3_sa7ey")
 expand_mode = 3
-stretch_mode = 4
 
 [node name="BottomStance" type="TextureRect" parent="VBoxContainer/Card/Stances" unique_id=2137401360]
 unique_name_in_owner = true
@@ -216,7 +257,6 @@ layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("4_4ndfn")
 expand_mode = 3
-stretch_mode = 4
 
 [node name="Bottom" type="Panel" parent="VBoxContainer" unique_id=209825063]
 layout_mode = 2
@@ -229,3 +269,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_g8ukc")
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_5bogr")
 speed_scale = 2.0
+
+[node name="ExpandAnimation" type="AnimationPlayer" parent="." unique_id=1202662495]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_g8ukc")

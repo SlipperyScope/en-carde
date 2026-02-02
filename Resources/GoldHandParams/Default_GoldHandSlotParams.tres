@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GoldHandSlotParams" format=3 uid="uid://bnkn2xpf8tjrh"]
+
+[ext_resource type="Script" uid="uid://cqi0xrcahq3ai" path="res://Resources/GoldHandParams/GoldHandSlotParams.gd" id="1_fcbab"]
+
+[resource]
+script = ExtResource("1_fcbab")
+AnimationSpeed = 2.0
+StartClickable = false
+metadata/_custom_type_script = "uid://cghdutrem3xva"

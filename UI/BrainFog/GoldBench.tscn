@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdgo1ydfwceow"]
 
 [ext_resource type="Script" uid="uid://ddjwxdac5e3no" path="res://UI/BrainFog/GoldBench.gd" id="1_ds8l0"]
-[ext_resource type="Texture2D" uid="uid://iqmyywnqcle4" path="res://GFX/GoldGFX/Cards/CardBlank.png" id="2_yltbh"]
+[ext_resource type="Resource" uid="uid://bnkn2xpf8tjrh" path="res://Resources/GoldHandParams/Default_GoldHandSlotParams.tres" id="2_yltbh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jq3gu"]
 content_margin_left = 0.0
@@ -9,94 +9,17 @@ content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yltbh"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f6e2s"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-
-[sub_resource type="Animation" id="Animation_yltbh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/TextureRect:size_flags_stretch_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [9.0]
-}
-
-[sub_resource type="Animation" id="Animation_f6e2s"]
-resource_name = "collapse"
-length = 0.1
-step = 0.0166
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/TextureRect:size_flags_stretch_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(0.5, 0.5),
-"update": 0,
-"values": [9.0, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jq3gu"]
-_data = {
-&"RESET": SubResource("Animation_yltbh"),
-&"collapse": SubResource("Animation_f6e2s")
-}
-
 [node name="GoldBench" type="PanelContainer" unique_id=1243112464]
 theme_override_styles/panel = SubResource("StyleBoxEmpty_jq3gu")
 script = ExtResource("1_ds8l0")
+CardSlotParams = ExtResource("2_yltbh")
 
 [node name="CardSlots" type="HBoxContainer" parent="." unique_id=1318183672]
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="SpacerSlot" type="PanelContainer" parent="CardSlots" unique_id=1741951524]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxEmpty_yltbh")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CardSlots/SpacerSlot" unique_id=637535884]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Buffer" type="Panel" parent="CardSlots/SpacerSlot/VBoxContainer" unique_id=1270065992]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_f6e2s")
-
-[node name="TextureRect" type="TextureRect" parent="CardSlots/SpacerSlot/VBoxContainer" unique_id=415800122]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 9.0
-texture = ExtResource("2_yltbh")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="CollapseAnimation" type="AnimationPlayer" parent="CardSlots/SpacerSlot" unique_id=611316961]
-unique_name_in_owner = true
-libraries/ = SubResource("AnimationLibrary_jq3gu")
-speed_scale = 2.0
-
-[node name="Cooldown" type="Timer" parent="CardSlots/SpacerSlot" unique_id=90647176]
+[node name="DealCooldown" type="Timer" parent="." unique_id=510429532]
 unique_name_in_owner = true
 wait_time = 0.05
 one_shot = true
