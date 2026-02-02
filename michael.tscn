@@ -1,17 +1,20 @@
 [gd_scene format=3 uid="uid://bvaiaiidg0517"]
 
-[ext_resource type="PackedScene" uid="uid://b5k1rmvlppl4g" path="res://lobby.tscn" id="2_smgpj"]
+[ext_resource type="PackedScene" uid="uid://cciqcq0s84qvk" path="res://lobby.tscn" id="2_smgpj"]
 [ext_resource type="Script" uid="uid://bbmh4vbe63rnv" path="res://michael_board.gd" id="2_snu1w"]
 [ext_resource type="Script" uid="uid://csf5bkl6b1rcd" path="res://server.gd" id="3_48l2u"]
 [ext_resource type="AudioStream" uid="uid://bv0kmyglnjyyt" path="res://quoteMusicUnquote/Vertigo - Game Jam v1.mp3" id="3_ns2ci"]
 
 [node name="Michael" type="Node2D" unique_id=2034632364]
 
+[node name="Lobby" parent="." unique_id=140611318 instance=ExtResource("2_smgpj")]
+
 [node name="Board" type="Control" parent="." unique_id=1458493779 node_paths=PackedStringArray("server")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1281.0
 offset_bottom = 719.0
+mouse_filter = 2
 script = ExtResource("2_snu1w")
 server = NodePath("../Server")
 metadata/_edit_use_anchors_ = true
@@ -42,8 +45,6 @@ text = "Spawn a Card"
 unique_name_in_owner = true
 layout_mode = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="Lobby" parent="." unique_id=140611318 instance=ExtResource("2_smgpj")]
 
 [node name="Server" type="Node" parent="." unique_id=1828644886 node_paths=PackedStringArray("lobby", "board")]
 script = ExtResource("3_48l2u")

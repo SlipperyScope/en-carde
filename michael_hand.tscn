@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1xcfs7jo3qsm" path="res://michael_hand.gd" id="1_72q2j"]
 [ext_resource type="AudioStream" uid="uid://dh1y2455hg486" path="res://quoteSoundEffectsUnquote/SwordShing.wav" id="2_72q2j"]
-[ext_resource type="AudioStream" uid="uid://e45nvs8oxxnm" path="res://quoteSoundEffectsUnquote/Crumple.wav" id="3_y4fhx"]
+[ext_resource type="AudioStream" uid="uid://bodxnxok63s4o" path="res://quoteSoundEffectsUnquote/CardShuffle.wav" id="3_y4fhx"]
 
 [node name="MichaelHand" type="Control" unique_id=260854209]
 layout_mode = 3

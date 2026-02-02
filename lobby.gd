@@ -53,6 +53,7 @@ func _on_connect_pressed():
 func close_lobby():
 	$Menu.hide()
 	$Waiting.hide()
+	$Logo.hide()
 
 func start_game():
 	close_lobby.rpc()
