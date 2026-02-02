@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GoldCard" format=3 uid="uid://bigj6rdd3lshp"]
+
+[ext_resource type="Script" uid="uid://bxqvymp6ovtxx" path="res://Resources/GoldCards/GoldCard.gd" id="1_j8qk6"]
+[ext_resource type="Texture2D" uid="uid://oe61cgmkiitg" path="res://GFX/GoldGFX/Cards/CardBack.png" id="1_n1gxf"]
+[ext_resource type="Texture2D" uid="uid://duf66t7ouv76i" path="res://GFX/GoldGFX/Cards/CardFront.png" id="2_ttvwk"]
+[ext_resource type="Texture2D" uid="uid://ylmbmpv3ogpf" path="res://GFX/GoldGFX/Cards/Graphic_AttackHigh.png" id="3_bu4jh"]
+
+[resource]
+script = ExtResource("1_j8qk6")
+CardName = "Eyepoker"
+Description = "You transition to a precision strike at your opponents eyes. The extra focus and high position gives your knees PTSD from when you were an adventurer."
+Graphic = ExtResource("3_bu4jh")
+Front = ExtResource("2_ttvwk")
+Back = ExtResource("1_n1gxf")
+TopStance = 1
+MiddleStance = 4
+BottomStance = 3
+metadata/_custom_type_script = "uid://bxqvymp6ovtxx"

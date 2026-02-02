@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ScoreMethod" format=3 uid="uid://bi4pobmle5jns"]
+
+[ext_resource type="Script" uid="uid://dlxbfdhpb1boj" path="res://Resources/MaskingRules/MaskingRule.gd" id="1_hle5v"]
+[ext_resource type="Script" uid="uid://cwaucqq0kkece" path="res://Resources/ScoreMethods/ScoreMethod.gd" id="2_4srr2"]
+
+[sub_resource type="Resource" id="Resource_hle5v"]
+script = ExtResource("1_hle5v")
+_Starting = 15
+_Mask = 1
+_Result = 1
+metadata/_custom_type_script = "uid://dlxbfdhpb1boj"
+
+[sub_resource type="Resource" id="Resource_4srr2"]
+script = ExtResource("1_hle5v")
+_Starting = 15
+_Mask = 2
+_Result = 2
+metadata/_custom_type_script = "uid://dlxbfdhpb1boj"
+
+[resource]
+script = ExtResource("2_4srr2")
+_MaskingRules = Array[ExtResource("1_hle5v")]([SubResource("Resource_hle5v"), SubResource("Resource_4srr2")])
+metadata/_custom_type_script = "uid://cwaucqq0kkece"

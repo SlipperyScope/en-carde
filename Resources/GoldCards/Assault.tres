@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GoldCard" format=3 uid="uid://slppoi4sxmjj"]
+
+[ext_resource type="Texture2D" uid="uid://oe61cgmkiitg" path="res://GFX/GoldGFX/Cards/CardBack.png" id="1_huhuu"]
+[ext_resource type="Texture2D" uid="uid://duf66t7ouv76i" path="res://GFX/GoldGFX/Cards/CardFront.png" id="2_0srhq"]
+[ext_resource type="Texture2D" uid="uid://b85u4yvwsokls" path="res://GFX/GoldGFX/Cards/Graphic_AttackMiddle.png" id="3_jfiga"]
+[ext_resource type="Script" uid="uid://bxqvymp6ovtxx" path="res://Resources/GoldCards/GoldCard.gd" id="4_crw5t"]
+
+[resource]
+script = ExtResource("4_crw5t")
+CardName = "Assault"
+Description = "Fire ze missiles! "
+Graphic = ExtResource("3_jfiga")
+Front = ExtResource("2_0srhq")
+Back = ExtResource("1_huhuu")
+TopStance = 1
+MiddleStance = 1
+BottomStance = 1
+metadata/_custom_type_script = "uid://bxqvymp6ovtxx"

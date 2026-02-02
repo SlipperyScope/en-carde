@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Cards="*uid://pl28ri8i5boq"
 Global="*uid://bveurog1xtndn"
+EnumDefinitions="*uid://cw3o8100pjxlv"
 
 [display]
 
