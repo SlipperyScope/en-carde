@@ -9,7 +9,23 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7wq2s"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sa7ey"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ndfn"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sa7ey"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8ukc"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
 
 [sub_resource type="Animation" id="Animation_frbri"]
 length = 0.001
@@ -49,8 +65,8 @@ tracks/0/path = NodePath("VBoxContainer/Top:size_flags_stretch_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05),
-"transitions": PackedFloat32Array(1, 2.000001),
+"times": PackedFloat32Array(0, 0.049999997),
+"transitions": PackedFloat32Array(2, 2.000001),
 "update": 0,
 "values": [1.0, 0.75]
 }
@@ -62,7 +78,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.05),
-"transitions": PackedFloat32Array(1, 2.0000002),
+"transitions": PackedFloat32Array(2, 2.0000002),
 "update": 0,
 "values": [0.0, 0.25]
 }
@@ -108,7 +124,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 2.000001),
+"transitions": PackedFloat32Array(2, 2.000001),
 "update": 0,
 "values": [1.0, 0.0]
 }
@@ -120,7 +136,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 2.0000002),
+"transitions": PackedFloat32Array(2, 2.0000002),
 "update": 0,
 "values": [0.0, 1.0]
 }
@@ -135,8 +151,7 @@ _data = {
 
 [node name="GoldHandSlot" type="PanelContainer" unique_id=2123632711]
 anchors_preset = -1
-offset_right = 606.0
-offset_bottom = 1000.0
+offset_bottom = 745.0
 mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_7wq2s")
 script = ExtResource("1_76njg")
@@ -149,28 +164,33 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4ndfn")
 
 [node name="Card" type="PanelContainer" parent="VBoxContainer" unique_id=1075660148]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 10.0
+size_flags_stretch_ratio = 9.0
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_sa7ey")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sa7ey")
 
 [node name="CardBackground" type="TextureRect" parent="VBoxContainer/Card" unique_id=1562397518]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("2_sa7ey")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="CardGraphic" type="TextureRect" parent="VBoxContainer/Card" unique_id=1155232255]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("3_4ndfn")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="Stances" type="GridContainer" parent="VBoxContainer/Card" unique_id=156085655]
+clip_contents = true
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
@@ -187,7 +207,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("3_sa7ey")
-expand_mode = 1
+expand_mode = 3
 stretch_mode = 4
 
 [node name="BottomStance" type="TextureRect" parent="VBoxContainer/Card/Stances" unique_id=2137401360]
@@ -195,7 +215,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("4_4ndfn")
-expand_mode = 1
+expand_mode = 3
 stretch_mode = 4
 
 [node name="Bottom" type="Panel" parent="VBoxContainer" unique_id=209825063]
@@ -203,7 +223,9 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g8ukc")
 
 [node name="SlideAnimation" type="AnimationPlayer" parent="." unique_id=1269190029]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_5bogr")
+speed_scale = 2.0

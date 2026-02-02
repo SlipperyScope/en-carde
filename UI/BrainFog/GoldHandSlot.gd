@@ -2,6 +2,9 @@ extends PanelContainer
 # UI element for cards in the player's hand
 class_name GoldHandSlot
 
+signal SelectCard(selectedCard: GoldHandSlot) # Notifies when the card should be selected
+signal PlayCard(selectedCard: GoldHandSlot) # Notifies when the selected card should be played
+
 const CARD_BUMP_TIME: float = 0.05
 
 var _MouseOver: bool = false
@@ -22,7 +25,10 @@ var IsSelected: bool:
 	set(new_value):
 		if IsSelected != new_value:
 			IsSelected = new_value
-			if %SlideAnimation.current_animation == "":
+			if %SlideAnimation.assigned_animation == "bump_up":
+				%SlideAnimation.assigned_animation = "slide_up"
+				%SlideAnimation.seek(_lastAnimationFinishedTime * 2)
+			else:
 				%SlideAnimation.assigned_animation = "slide_up"
 				%SlideAnimation.seek(_lastAnimationFinishedTime)
 			if new_value == true:
@@ -42,7 +48,11 @@ func _on_mouse_exited() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		IsSelected = !IsSelected
+		if IsSelected == true:
+			PlayCard.emit(self )
+		else:
+			SelectCard.emit(self )
+		# IsSelected = !IsSelected
 
 func _on_animation_finished(anim_name: String) -> void:
 	_lastAnimationFinishedTime = %SlideAnimation.current_animation_position
