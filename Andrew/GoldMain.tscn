@@ -3,10 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://diurlcogt42j8" path="res://UI/BrainFog/GoldUI.tscn" id="1_l4lns"]
 [ext_resource type="Script" uid="uid://bx4yympnpmtj8" path="res://Andrew/GoldMain.gd" id="1_q1axp"]
 [ext_resource type="Resource" uid="uid://cyk3hsb3tuxbf" path="res://Resources/GoldDecks/Standard_GoldDeck.tres" id="2_g62f0"]
+[ext_resource type="Resource" uid="uid://by5ier7es1c5e" path="res://Resources/GoldGameRules/Default_GoldGameRules.tres" id="3_lv7qv"]
 
 [node name="GoldMain" type="Node2D" unique_id=1784204069]
 script = ExtResource("1_q1axp")
 DeckResource = ExtResource("2_g62f0")
+GameRule = ExtResource("3_lv7qv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=830886825]
 

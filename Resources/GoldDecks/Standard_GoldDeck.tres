@@ -16,13 +16,13 @@
 [sub_resource type="Resource" id="Resource_3uir7"]
 script = ExtResource("1_eqdek")
 Card = ExtResource("4_c4i1k")
-Count = 3
+Count = 4
 metadata/_custom_type_script = "uid://cny5smebgmlck"
 
 [sub_resource type="Resource" id="Resource_my58o"]
 script = ExtResource("1_eqdek")
 Card = ExtResource("5_roh0l")
-Count = 2
+Count = 4
 metadata/_custom_type_script = "uid://cny5smebgmlck"
 
 [sub_resource type="Resource" id="Resource_bivq0"]
@@ -40,7 +40,7 @@ metadata/_custom_type_script = "uid://bxqvymp6ovtxx"
 [sub_resource type="Resource" id="Resource_vhjxs"]
 script = ExtResource("1_eqdek")
 Card = SubResource("Resource_bivq0")
-Count = 1
+Count = 3
 metadata/_custom_type_script = "uid://cny5smebgmlck"
 
 [resource]

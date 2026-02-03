@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GoldGameRule" format=3 uid="uid://by5ier7es1c5e"]
+
+[ext_resource type="Script" uid="uid://b6f7hmknrk64j" path="res://Resources/GoldGameRules/GoldGameRule.gd" id="1_onswb"]
+
+[resource]
+script = ExtResource("1_onswb")
+Draw = 10
+Discard = 5
+metadata/_custom_type_script = "uid://b6f7hmknrk64j"

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b0dhm8dkgvxih" path="res://UI/BrainFog/GoldUI.gd" id="1_73g2c"]
 [ext_resource type="PackedScene" uid="uid://bdgo1ydfwceow" path="res://UI/BrainFog/GoldBench.tscn" id="1_as7je"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_73g2c"]
+
 [node name="GoldUi" type="MarginContainer" unique_id=1331284108]
 custom_minimum_size = Vector2(1280, 720)
 anchors_preset = 15
@@ -20,11 +22,84 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_73g2c")
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/PanelContainer" unique_id=265249986]
+layout_mode = 2
+columns = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=176735369]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=316946863]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=868330152]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=308058366]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1921681805]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DealButton" type="Button" parent="VBoxContainer/PanelContainer/GridContainer/MarginContainer5" unique_id=965008442]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "DEAL"
+
+[node name="Discard" type="VBoxContainer" parent="VBoxContainer/PanelContainer/GridContainer/MarginContainer5" unique_id=710236346]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="DiscardHint" type="Label" parent="VBoxContainer/PanelContainer/GridContainer/MarginContainer5/Discard" unique_id=1639944815]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Select 0 more cards to discard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiscardButton" type="Button" parent="VBoxContainer/PanelContainer/GridContainer/MarginContainer5/Discard" unique_id=1594444985]
+unique_name_in_owner = true
+layout_mode = 2
+text = "DISCARD"
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=733468600]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=883448166]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=343072684]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=422496335]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=161095795]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.48
+size_flags_stretch_ratio = 1.12
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10

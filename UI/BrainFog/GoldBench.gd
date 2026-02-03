@@ -2,11 +2,24 @@ extends PanelContainer
 
 var CardSlotScene: PackedScene = preload("res://UI/BrainFog/GoldHandSlot.tscn")
 
+signal SelectedCardsChanged(count: int) ## Number of selected cards has changed[br]count: current number selected
 signal PlayCard(id: String) ## Card selected for play
 signal DealFinished() ## Cards have been dealt
 
 ## Params to use for adding new cards
 @export var CardSlotParams: GoldHandSlotParams
+
+## Maximum number of cards that can be selected at once
+var MaxSelectableCards: int:
+	get: return MaxSelectableCards
+	set(value): MaxSelectableCards = value
+
+## Current number of selected cards
+var SelectedCards: int = 0:
+	get: return SelectedCards
+	set(value):
+		SelectedCards = value
+		SelectedCardsChanged.emit(value)
 
 var _DealtCards: Array[GoldHandSlot] = []
 var _DealQueue: Array[GoldHandSlot] = []
@@ -63,7 +76,9 @@ func _on_cooldown_finished() -> void:
 
 func _on_select_card(card: GoldHandSlot) -> void:
 	if AllowMultiSelect == true:
-		card.Select()
+		if SelectedCards < MaxSelectableCards:
+			SelectedCards += 1
+			card.Select()
 		return
 		
 	for slot in _DealtCards:
@@ -75,6 +90,7 @@ func _on_select_card(card: GoldHandSlot) -> void:
 
 func _on_play_card(card: GoldHandSlot) -> void:
 	if AllowMultiSelect == true:
+		SelectedCards -= 1
 		card.Deselect()
 	else:
 		print("Played card")
