@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="GoldDeck" format=3 uid="uid://cyk3hsb3tuxbf"]
+
+[ext_resource type="Script" uid="uid://cny5smebgmlck" path="res://Resources/GoldDecks/GoldCardCount.gd" id="1_eqdek"]
+[ext_resource type="Texture2D" uid="uid://oe61cgmkiitg" path="res://GFX/GoldGFX/Cards/CardBack.png" id="1_sw8ix"]
+[ext_resource type="Script" uid="uid://dr83yb3om8s3i" path="res://Resources/GoldDecks/GoldDeck.gd" id="2_36w3n"]
+[ext_resource type="Texture2D" uid="uid://duf66t7ouv76i" path="res://GFX/GoldGFX/Cards/CardFront.png" id="2_mnrqg"]
+[ext_resource type="Resource" uid="uid://slppoi4sxmjj" path="res://Resources/GoldCards/Assault.tres" id="4_c4i1k"]
+[ext_resource type="Resource" uid="uid://bigj6rdd3lshp" path="res://Resources/GoldCards/Eyepoker.tres" id="5_roh0l"]
+[ext_resource type="Texture2D" uid="uid://b85u4yvwsokls" path="res://GFX/GoldGFX/Cards/Graphic_AttackMiddle.png" id="6_pm7ab"]
+[ext_resource type="Script" uid="uid://bxqvymp6ovtxx" path="res://Resources/GoldCards/GoldCard.gd" id="7_yuju5"]
+[ext_resource type="Texture2D" uid="uid://dbjqlwqp8e4kc" path="res://GFX/GoldGFX/Cards/Stance_Attack.png" id="8_fde7a"]
+[ext_resource type="Texture2D" uid="uid://x0fwntscm150" path="res://GFX/GoldGFX/Cards/Stance_Defend.png" id="9_7jf2r"]
+[ext_resource type="Texture2D" uid="uid://ctroo84q58qjh" path="res://GFX/GoldGFX/Cards/Stance_Vulnerable.png" id="10_mlukd"]
+[ext_resource type="Texture2D" uid="uid://dl6hsfm6nfnp1" path="res://GFX/GoldGFX/Cards/Stance_Passthrough.png" id="11_vgaa8"]
+
+[sub_resource type="Resource" id="Resource_3uir7"]
+script = ExtResource("1_eqdek")
+Card = ExtResource("4_c4i1k")
+Count = 3
+metadata/_custom_type_script = "uid://cny5smebgmlck"
+
+[sub_resource type="Resource" id="Resource_my58o"]
+script = ExtResource("1_eqdek")
+Card = ExtResource("5_roh0l")
+Count = 2
+metadata/_custom_type_script = "uid://cny5smebgmlck"
+
+[sub_resource type="Resource" id="Resource_bivq0"]
+script = ExtResource("7_yuju5")
+CardName = "Castle"
+Description = "You become a solid wall of rocks for maximum defense
+
+(since this isn't saved in the files, it lives and dies with this resource, mkaing it easy to lose the data, but convenitent compared to having to create a new resource for each unique card)"
+Graphic = ExtResource("6_pm7ab")
+TopStance = 2
+MiddleStance = 2
+BottomStance = 2
+metadata/_custom_type_script = "uid://bxqvymp6ovtxx"
+
+[sub_resource type="Resource" id="Resource_vhjxs"]
+script = ExtResource("1_eqdek")
+Card = SubResource("Resource_bivq0")
+Count = 1
+metadata/_custom_type_script = "uid://cny5smebgmlck"
+
+[resource]
+script = ExtResource("2_36w3n")
+CardBack = ExtResource("1_sw8ix")
+CardFront = ExtResource("2_mnrqg")
+Stances = Dictionary[int, Texture2D]({
+0: null,
+1: ExtResource("8_fde7a"),
+2: ExtResource("9_7jf2r"),
+4: ExtResource("10_mlukd"),
+8: ExtResource("11_vgaa8")
+})
+Cards = Array[ExtResource("1_eqdek")]([SubResource("Resource_3uir7"), SubResource("Resource_my58o"), SubResource("Resource_vhjxs")])
+metadata/_custom_type_script = "uid://dr83yb3om8s3i"

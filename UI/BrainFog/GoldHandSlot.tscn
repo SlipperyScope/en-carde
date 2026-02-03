@@ -217,6 +217,7 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_sa7ey")
 
 [node name="CardBackground" type="TextureRect" parent="VBoxContainer/Card" unique_id=1562397518]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_sa7ey")
@@ -224,6 +225,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="CardGraphic" type="TextureRect" parent="VBoxContainer/Card" unique_id=1155232255]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("3_4ndfn")

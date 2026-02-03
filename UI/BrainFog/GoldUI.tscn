@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://diurlcogt42j8"]
 
+[ext_resource type="Script" uid="uid://b0dhm8dkgvxih" path="res://UI/BrainFog/GoldUI.gd" id="1_73g2c"]
 [ext_resource type="PackedScene" uid="uid://bdgo1ydfwceow" path="res://UI/BrainFog/GoldBench.tscn" id="1_as7je"]
 
 [node name="GoldUi" type="MarginContainer" unique_id=1331284108]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_73g2c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=287092722]
 layout_mode = 2

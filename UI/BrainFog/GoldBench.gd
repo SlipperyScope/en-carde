@@ -18,21 +18,22 @@ var AllowMultiSelect: bool = false:
 		AllowMultiSelect = new_value
 
 func _ready():
-	#%CollapseAnimation.animation_finished.connect(_on_collapse_finish)
-	# Test deal cards
-	for i in range(8):
-		_QueueCard()
-
-	_DealCards()
-
 	pass
 
-# Adds a card to the deal queue
-func _QueueCard():
-	var card = CardSlotScene.instantiate() as GoldHandSlot
-	card.ready.connect(func(): card.Build(CardSlotParams))
+## Queue cards up to deal onto the bench
+func QueueCards(cards: Array[GoldCardInst]) -> void:
+	for card in cards:
+		_QueueCard(card)
 
-	_DealQueue.append(card)
+# Adds a card to the deal queue
+func _QueueCard(card: GoldCardInst):
+	var slot = CardSlotScene.instantiate() as GoldHandSlot
+	slot.ready.connect(func(): slot.Build(card, CardSlotParams))
+	print(card)
+	_DealQueue.append(slot)
+
+func StartDeal():
+	_DealCards()
 
 # Deals the each card from the queue
 func _DealCards():
@@ -50,7 +51,7 @@ func _DealCards():
 		DealFinished.emit()
 
 ## Handles card deal animation complete
-func _on_card_deal_animation_finished(card: GoldHandSlot, position: GoldHandSlot.ExpandTarget) -> void:
+func _on_card_deal_animation_finished(card: GoldHandSlot, _position: GoldHandSlot.ExpandTarget) -> void:
 	card.ExpandAnimationFinished.disconnect(_on_card_deal_animation_finished)
 	%DealCooldown.timeout.connect(_on_cooldown_finished)
 	%DealCooldown.start()

@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://rvrpjodn6e1v"]
 
 [ext_resource type="PackedScene" uid="uid://diurlcogt42j8" path="res://UI/BrainFog/GoldUI.tscn" id="1_l4lns"]
+[ext_resource type="Script" uid="uid://bx4yympnpmtj8" path="res://Andrew/GoldMain.gd" id="1_q1axp"]
+[ext_resource type="Resource" uid="uid://cyk3hsb3tuxbf" path="res://Resources/GoldDecks/Standard_GoldDeck.tres" id="2_g62f0"]
 
 [node name="GoldMain" type="Node2D" unique_id=1784204069]
+script = ExtResource("1_q1axp")
+DeckResource = ExtResource("2_g62f0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=830886825]
 
-[node name="GoldUi" parent="CanvasLayer" unique_id=1331284108 instance=ExtResource("1_l4lns")]
+[node name="GoldUI" parent="CanvasLayer" unique_id=1331284108 instance=ExtResource("1_l4lns")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 0)

@@ -64,11 +64,17 @@ func _ready():
 	gui_input.connect(_on_mouse_click)
 
 ## Set the initial configurion for the card
-func Build(params: GoldHandSlotParams) -> void:
+func Build(card: GoldCardInst, params: GoldHandSlotParams) -> void:
 	if is_node_ready() == false:
 		push_error("Tried to build hand slot before it was ready")
 		return
 	
+	%CardBackground.texture = card.FrontTexture
+	%CardGraphic.texture = card.GraphicTexture
+	%TopStance.texture = card.TopStanceTexture
+	%MiddleStance.texture = card.MiddleStanceTexture
+	%BottomStance.texture = card.BottomStanceTexture
+
 	DoAnimations = false
 	%SlideAnimation.speed_scale = params.AnimationSpeed
 	%ExpandAnimation.speed_scale = params.AnimationSpeed
@@ -94,7 +100,7 @@ func Select(fireEvent = true) -> void:
 	_Slide(SlideTarget.Full, !DoAnimations, fireEvent)
 
 ## Handles select animation completion
-func _on_select_animation_finished(anim_name: String) -> void:
+func _on_select_animation_finished(_anim_name: String) -> void:
 	%SlideAnimation.animation_finished.disconnect(_on_select_animation_finished)
 	SelectAnimationFinished.emit(self , SlideTarget.Full)
 
@@ -107,7 +113,7 @@ func Deselect(fireEvent = true) -> void:
 	_Slide(target, !DoAnimations, fireEvent)
 
 ## Handles deselect animation completion
-func _on_deselect_animation_finished(anim_name: String) -> void:
+func _on_deselect_animation_finished(_anim_name: String) -> void:
 	%SlideAnimation.animation_finished.disconnect(_on_deselect_animation_finished)
 	SelectAnimationFinished.emit(self , SlideTarget.Full)
 
@@ -119,7 +125,7 @@ func Expand(fireEvent = true) -> void:
 	_Expand(ExpandTarget.Expanded, !DoAnimations, fireEvent)
 
 ## Handles expand animation completion
-func _on_expand_animation_finished(anim_name: String) -> void:
+func _on_expand_animation_finished(_anim_name: String) -> void:
 	%ExpandAnimation.animation_finished.disconnect(_on_expand_animation_finished)
 	ExpandAnimationFinished.emit(self , ExpandTarget.Expanded)
 
@@ -131,7 +137,7 @@ func Collapse(fireEvent = true) -> void:
 	_Expand(ExpandTarget.Collapsed, !DoAnimations, fireEvent)
 
 ## Handles collapse animation completion
-func _on_collapse_animation_finished(anim_name: String) -> void:
+func _on_collapse_animation_finished(_anim_name: String) -> void:
 	%ExpandAnimation.animation_finished.disconnect(_on_collapse_animation_finished)
 	ExpandAnimationFinished.emit(self , ExpandTarget.Collapsed)
 
