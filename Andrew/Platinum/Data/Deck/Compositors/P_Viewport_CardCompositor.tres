@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="P_Viewport_CardCompositor" format=3 uid="uid://f6jxkbmyu8ft"]
+
+[ext_resource type="Script" uid="uid://b3uqqhec3ci3n" path="res://Andrew/Platinum/Data/Deck/Compositors/P_Viewport_CardCompositor.gd" id="1_law3u"]
+
+[resource]
+script = ExtResource("1_law3u")
+metadata/_custom_type_script = "uid://b3uqqhec3ci3n"

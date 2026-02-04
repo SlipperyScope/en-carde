@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="P_DeckInfo" format=3 uid="uid://bseitf1mar574"]
+
+[ext_resource type="Script" uid="uid://dq65g0arjncp2" path="res://Andrew/Platinum/Data/Deck/P_CardInfo.gd" id="1_iodir"]
+[ext_resource type="Resource" uid="uid://bnll3vrymfn30" path="res://Andrew/Platinum/Data/Deck/Cards/P_CardInfo_Null.tres" id="2_p0ybl"]
+[ext_resource type="Script" uid="uid://8bh4tveuvoqo" path="res://Andrew/Platinum/Data/Deck/P_DeckInfo.gd" id="3_8lst0"]
+
+[resource]
+script = ExtResource("3_8lst0")
+Cards = Dictionary[ExtResource("1_iodir"), int]({
+ExtResource("2_p0ybl"): 1
+})
+metadata/_custom_type_script = "uid://8bh4tveuvoqo"

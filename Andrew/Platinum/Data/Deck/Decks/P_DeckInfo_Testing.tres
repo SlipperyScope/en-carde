@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="P_DeckInfo" format=3 uid="uid://07vkpcsi0j1l"]
+
+[ext_resource type="Texture2D" uid="uid://duf66t7ouv76i" path="res://GFX/GoldGFX/Cards/CardFront.png" id="1_dwle5"]
+[ext_resource type="Script" uid="uid://dq65g0arjncp2" path="res://Andrew/Platinum/Data/Deck/P_CardInfo.gd" id="1_yvnxf"]
+[ext_resource type="Script" uid="uid://8bh4tveuvoqo" path="res://Andrew/Platinum/Data/Deck/P_DeckInfo.gd" id="2_rjo4s"]
+[ext_resource type="Texture2D" uid="uid://ylmbmpv3ogpf" path="res://GFX/GoldGFX/Cards/Graphic_AttackHigh.png" id="3_gp6l3"]
+[ext_resource type="Texture2D" uid="uid://iqmyywnqcle4" path="res://GFX/GoldGFX/Cards/CardBlank.png" id="3_pl65k"]
+[ext_resource type="Texture2D" uid="uid://oe61cgmkiitg" path="res://GFX/GoldGFX/Cards/CardBack.png" id="4_gp6l3"]
+[ext_resource type="Texture2D" uid="uid://daik4jbkqxu75" path="res://GFX/GoldGFX/Cards/Graphic_DefendMiddle.png" id="4_wqvbf"]
+[ext_resource type="Texture2D" uid="uid://dbjqlwqp8e4kc" path="res://GFX/GoldGFX/Cards/Stance_Attack.png" id="5_wqvbf"]
+[ext_resource type="Texture2D" uid="uid://x0fwntscm150" path="res://GFX/GoldGFX/Cards/Stance_Defend.png" id="6_edbug"]
+[ext_resource type="Texture2D" uid="uid://ctroo84q58qjh" path="res://GFX/GoldGFX/Cards/Stance_Vulnerable.png" id="7_6j1sa"]
+[ext_resource type="Texture2D" uid="uid://dl6hsfm6nfnp1" path="res://GFX/GoldGFX/Cards/Stance_Passthrough.png" id="8_ggn6h"]
+
+[sub_resource type="Resource" id="Resource_wqvbf"]
+script = ExtResource("1_yvnxf")
+CardID = "123"
+Name = "Test card"
+Description = "Card for testing"
+Graphic = ExtResource("3_gp6l3")
+Stances = Dictionary[int, int]({
+0: 1,
+1: 2,
+2: 4
+})
+metadata/_custom_type_script = "uid://dq65g0arjncp2"
+
+[sub_resource type="Resource" id="Resource_edbug"]
+script = ExtResource("1_yvnxf")
+CardID = "999"
+Name = "Test 2"
+Description = "Another test card"
+PowerCard = true
+Graphic = ExtResource("4_wqvbf")
+Stances = Dictionary[int, int]({
+0: 4,
+1: 1,
+2: 8
+})
+metadata/_custom_type_script = "uid://dq65g0arjncp2"
+
+[resource]
+script = ExtResource("2_rjo4s")
+Name = "Test Deck"
+Description = "Deck for testing purposed"
+BackgroundGraphic = ExtResource("1_dwle5")
+ChromeGraphic = ExtResource("3_pl65k")
+ReverseGraphic = ExtResource("4_gp6l3")
+StanceGraphics = Dictionary[int, Texture2D]({
+0: null,
+1: ExtResource("5_wqvbf"),
+2: ExtResource("6_edbug"),
+4: ExtResource("7_6j1sa"),
+8: ExtResource("8_ggn6h")
+})
+Cards = Dictionary[ExtResource("1_yvnxf"), int]({
+SubResource("Resource_wqvbf"): 1,
+SubResource("Resource_edbug"): 1
+})
+metadata/_custom_type_script = "uid://8bh4tveuvoqo"

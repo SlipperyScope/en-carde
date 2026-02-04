@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="P_CardInfo" format=3 uid="uid://c282cq4g0xgx6"]
+
+[ext_resource type="Texture2D" uid="uid://daik4jbkqxu75" path="res://GFX/GoldGFX/Cards/Graphic_DefendMiddle.png" id="1_76sol"]
+[ext_resource type="Script" uid="uid://dq65g0arjncp2" path="res://Andrew/Platinum/Data/Deck/P_CardInfo.gd" id="1_wocq5"]
+
+[resource]
+script = ExtResource("1_wocq5")
+CardID = "100"
+Name = "Solid Wall of Block"
+Description = "Defence, turned up to 11"
+PowerCard = true
+Graphic = ExtResource("1_76sol")
+Stances = Array[int]([2, 2, 2])
+metadata/_custom_type_script = "uid://dq65g0arjncp2"
