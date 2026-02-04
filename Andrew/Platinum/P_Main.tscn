@@ -1,31 +1,11 @@
 [gd_scene format=3 uid="uid://bg27koa1dw867"]
 
 [ext_resource type="Script" uid="uid://5kn1ek1wf8ga" path="res://Andrew/Platinum/P_Main.gd" id="1_4vqyy"]
-[ext_resource type="Resource" uid="uid://07vkpcsi0j1l" path="res://Andrew/Platinum/Data/Deck/Decks/P_DeckInfo_Testing.tres" id="2_vju3e"]
-[ext_resource type="Resource" uid="uid://f6jxkbmyu8ft" path="res://Andrew/Platinum/Data/Deck/Compositors/P_Viewport_CardCompositor.tres" id="3_kto7d"]
+[ext_resource type="PackedScene" uid="uid://bpphh1wue468k" path="res://Andrew/Platinum/Scenes/Menus/P_MainMenu.tscn" id="2_4dwbu"]
 
 [node name="Main" type="Node2D" unique_id=668271328]
 script = ExtResource("1_4vqyy")
-Deck = ExtResource("2_vju3e")
-CardCompositor = ExtResource("3_kto7d")
+MainMenu = ExtResource("2_4dwbu")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1822140392]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1273574769]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="card_1" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1489426307]
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=207904715]
 unique_name_in_owner = true
-layout_mode = 2
-expand_mode = 3
-
-[node name="card_2" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1357922298]
-unique_name_in_owner = true
-layout_mode = 2
-expand_mode = 3

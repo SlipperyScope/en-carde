@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://bpphh1wue468k"]
+
+[ext_resource type="Script" uid="uid://c5bjebxlyh8ic" path="res://Andrew/Platinum/Scenes/Menus/P_MainMenu.gd" id="1_3orsi"]
+[ext_resource type="Script" uid="uid://dmqlp5pq6bmv" path="res://Andrew/Platinum/Game/P_GameMode.gd" id="2_jpm52"]
+[ext_resource type="Texture2D" uid="uid://w4ggwvs76gpl" path="res://quoteArtUnquote/logo.png" id="2_skgvd"]
+[ext_resource type="Resource" uid="uid://ehgsg2yl3xk2" path="res://Andrew/Platinum/Game/GameModes/P_GameMode_Null.tres" id="3_3ev53"]
+[ext_resource type="Resource" uid="uid://ptapp512fpke" path="res://Andrew/Platinum/Game/GameModes/P_GameMode_LocalTest.tres" id="3_q7dw1"]
+[ext_resource type="Script" uid="uid://8bh4tveuvoqo" path="res://Andrew/Platinum/Data/Deck/P_DeckInfo.gd" id="5_q7dw1"]
+[ext_resource type="Script" uid="uid://coco7pnujcqam" path="res://Andrew/Platinum/Scenes/Menus/Transitions/P_Transition_Fade.gd" id="6_wrt0x"]
+
+[sub_resource type="Resource" id="Resource_8gi42"]
+script = ExtResource("2_jpm52")
+Name = "Friends Only"
+Description = "Should not display on local"
+_PlayFilter = 2
+DrawCount = 10
+DiscardCount = 5
+metadata/_custom_type_script = "uid://dmqlp5pq6bmv"
+
+[sub_resource type="Resource" id="Resource_fii7p"]
+script = ExtResource("6_wrt0x")
+FadeoutTime = 0.05
+metadata/_custom_type_script = "uid://coco7pnujcqam"
+
+[node name="P_MainMenu" type="PanelContainer" unique_id=595156954]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3orsi")
+GameModes = Array[ExtResource("2_jpm52")]([ExtResource("3_q7dw1"), ExtResource("3_3ev53"), SubResource("Resource_8gi42")])
+MenuTransition = SubResource("Resource_fii7p")
+
+[node name="TitleMenu" type="VBoxContainer" parent="." unique_id=593927903]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Header" type="MarginContainer" parent="TitleMenu" unique_id=1340599277]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="TextureRect" type="TextureRect" parent="TitleMenu/Header" unique_id=1653056935]
+layout_mode = 2
+texture = ExtResource("2_skgvd")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Body" type="MarginContainer" parent="TitleMenu" unique_id=1452612173]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Buttons" type="HBoxContainer" parent="TitleMenu/Body" unique_id=1543234705]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="LeftPad" type="MarginContainer" parent="TitleMenu/Body/Buttons" unique_id=1197188431]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Buttons" type="VBoxContainer" parent="TitleMenu/Body/Buttons" unique_id=451398625]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ClientSelect" type="VBoxContainer" parent="TitleMenu/Body/Buttons/Buttons" unique_id=237753896]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleMenu/Body/Buttons/Buttons/ClientSelect" unique_id=979253272]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OfflineButton" type="Button" parent="TitleMenu/Body/Buttons/Buttons/ClientSelect/MarginContainer" unique_id=795523607]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play Offline"
+
+[node name="MarginContainer2" type="MarginContainer" parent="TitleMenu/Body/Buttons/Buttons/ClientSelect" unique_id=407746073]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HostButton" type="Button" parent="TitleMenu/Body/Buttons/Buttons/ClientSelect/MarginContainer2" unique_id=19620156]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Host Online Match"
+
+[node name="MarginContainer3" type="MarginContainer" parent="TitleMenu/Body/Buttons/Buttons/ClientSelect" unique_id=1014594047]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ClientButton" type="Button" parent="TitleMenu/Body/Buttons/Buttons/ClientSelect/MarginContainer3" unique_id=1809153197]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Connect to Online Match"
+
+[node name="MarginContainer4" type="MarginContainer" parent="TitleMenu/Body/Buttons/Buttons/ClientSelect" unique_id=1731196575]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DedicatedButton" type="Button" parent="TitleMenu/Body/Buttons/Buttons/ClientSelect/MarginContainer4" unique_id=616450121]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dedicated Server"
+
+[node name="ColorRect" type="ColorRect" parent="TitleMenu/Body/Buttons/Buttons" unique_id=1636602561]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleMenu/Body/Buttons/Buttons" unique_id=369236338]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitButton" type="Button" parent="TitleMenu/Body/Buttons/Buttons/MarginContainer" unique_id=1262751435]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[node name="RightPad" type="MarginContainer" parent="TitleMenu/Body/Buttons" unique_id=402220682]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Footer" type="MarginContainer" parent="TitleMenu" unique_id=986909017]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GMSelect" type="VBoxContainer" parent="." unique_id=855289009]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Header" type="MarginContainer" parent="GMSelect" unique_id=970194054]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Body" type="MarginContainer" parent="GMSelect" unique_id=560227437]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GMSelect/Body" unique_id=1312121680]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GMSelect/Body/HBoxContainer" unique_id=1910513625]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+color = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GMSelect/Body/HBoxContainer" unique_id=838446370]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GMList" type="VBoxContainer" parent="GMSelect/Body/HBoxContainer/VBoxContainer" unique_id=1723644564]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="ColorRect" type="ColorRect" parent="GMSelect/Body/HBoxContainer/VBoxContainer" unique_id=653281103]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="GMSelect/Body/HBoxContainer/VBoxContainer" unique_id=1010981146]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GMBackButton" type="Button" parent="GMSelect/Body/HBoxContainer/VBoxContainer/MarginContainer" unique_id=414822750]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back"
+
+[node name="GMConfig" type="MarginContainer" parent="GMSelect/Body/HBoxContainer" unique_id=264637915]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GMSelect/Body/HBoxContainer/GMConfig" unique_id=422316073]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer" unique_id=374526798]
+layout_mode = 2
+columns = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/GridContainer" unique_id=1585722284]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/GridContainer/HBoxContainer" unique_id=862750146]
+layout_mode = 2
+text = "Max Players"
+
+[node name="MaxPlayers" type="Label" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/GridContainer/HBoxContainer" unique_id=715738849]
+unique_name_in_owner = true
+layout_mode = 2
+text = "-1"
+
+[node name="ColorRect" type="ColorRect" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/GridContainer" unique_id=1463520824]
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/GridContainer" unique_id=20532850]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/GridContainer/HBoxContainer2" unique_id=83822588]
+layout_mode = 2
+text = "Draw: "
+
+[node name="DrawCount" type="Label" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/GridContainer/HBoxContainer2" unique_id=1016812155]
+unique_name_in_owner = true
+layout_mode = 2
+text = "-1"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/GridContainer" unique_id=1790139448]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/GridContainer/HBoxContainer3" unique_id=2032902034]
+layout_mode = 2
+text = "Discard:"
+
+[node name="DiscardCount" type="Label" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/GridContainer/HBoxContainer3" unique_id=1099871648]
+unique_name_in_owner = true
+layout_mode = 2
+text = "-1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer" unique_id=2088788246]
+layout_mode = 2
+
+[node name="GMDescription" type="Label" parent="GMSelect/Body/HBoxContainer/GMConfig/VBoxContainer/HBoxContainer" unique_id=616276123]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Game mode descrition"
+
+[node name="ColorRect2" type="ColorRect" parent="GMSelect/Body/HBoxContainer" unique_id=775227464]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+color = Color(1, 1, 1, 0)
+
+[node name="Footer" type="MarginContainer" parent="GMSelect" unique_id=635153145]
+layout_mode = 2
+size_flags_vertical = 3

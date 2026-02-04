@@ -1,20 +1,40 @@
 extends Node2D
 
-@export var Deck: P_DeckInfo
-@export var CardCompositor: P_CardCompositor
+@export var MainMenu: PackedScene
+
+var _CurrentScene: CanvasItem
 
 func _ready():
-	var card1 = Deck.Cards.keys()[0]
-	var card2 = Deck.Cards.keys()[1]
+	_LoadMenu()
 
-	print("card 1: %s, card 2: %s" % [card1, card2])
+func _LoadMenu():
+	var menu = MainMenu.instantiate() as P_MainMenu
 
-	var params = P_CardCompositor.CompositeParams.Make(Deck, card1, "123")
-	var params2 = P_CardCompositor.CompositeParams.Make(Deck, card2, "456")
-	var tex = await CardCompositor.Composite(self , params)
-	print(tex)
-	%card_1.texture = tex
+	%Canvas.add_child(menu)
+	menu.Exit.connect(func(): get_tree().quit())
+	menu.Play.connect(func(c): _StartGame(c))
 
-	tex = await CardCompositor.Composite(self , params2)
-	print(tex)
-	%card_2.texture = tex
+	_CurrentScene = menu
+
+func _StartGame(client: Plat.ClientType) -> void:
+	match client:
+		Plat.ClientType.Local:
+			_StartLocal()
+		Plat.ClientType.RemoteClient:
+			_StartClient()
+		Plat.ClientType.RemoteHost:
+			_StartClientHost()
+		Plat.ClientType.DedicatedServer:
+			_StartDedicatedHost()
+
+func _StartLocal() -> void:
+	print("Starting local game...")
+
+func _StartClient() -> void:
+	print("Starting as client...")
+
+func _StartClientHost() -> void:
+	print("Starting as host...")
+
+func _StartDedicatedHost() -> void:
+	print("Starting dedicated server...")
