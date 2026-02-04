@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="P_GameMode" format=3 uid="uid://ptapp512fpke"]
+
+[ext_resource type="Script" uid="uid://8bh4tveuvoqo" path="res://Andrew/Platinum/Data/Deck/P_DeckInfo.gd" id="1_rd3kh"]
+[ext_resource type="Script" uid="uid://dmqlp5pq6bmv" path="res://Andrew/Platinum/Game/P_GameMode.gd" id="2_mi0it"]
+
+[resource]
+script = ExtResource("2_mi0it")
+Name = "Local Test"
+Description = "For testing a local game"
+Players = 1
+_PlayFilter = 1
+DrawCount = 4
+DiscardCount = 2
+Decks = Array[ExtResource("1_rd3kh")]([null])
+metadata/_custom_type_script = "uid://dmqlp5pq6bmv"

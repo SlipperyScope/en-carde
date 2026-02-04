@@ -1,6 +1,8 @@
 @icon("res://Andrew/Platinum/Misc/P_Icon_Card.png")
 
-## Information about a card
+## Card configuration resource[br]
+## Each instance should be a unique card[br]
+## Each card instance will share this resource[br]
 class_name P_CardInfo extends P_Resource
 
 @export var CardID: String ## Unique ID for each card (not instance ID)
@@ -13,4 +15,5 @@ class_name P_CardInfo extends P_Resource
 	Plat.P_StancePosition.Middle: Plat.P_Stance.Null,
 	Plat.P_StancePosition.Bottom: Plat.P_Stance.Null,
 }
+
 # Could have an export for special abilities, which would be a resource

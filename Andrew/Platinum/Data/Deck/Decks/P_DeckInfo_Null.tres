@@ -1,12 +1,26 @@
 [gd_resource type="Resource" script_class="P_DeckInfo" format=3 uid="uid://bseitf1mar574"]
 
+[ext_resource type="Texture2D" uid="uid://iqmyywnqcle4" path="res://GFX/GoldGFX/Cards/CardBlank.png" id="1_8lst0"]
 [ext_resource type="Script" uid="uid://dq65g0arjncp2" path="res://Andrew/Platinum/Data/Deck/P_CardInfo.gd" id="1_iodir"]
 [ext_resource type="Resource" uid="uid://bnll3vrymfn30" path="res://Andrew/Platinum/Data/Deck/Cards/P_CardInfo_Null.tres" id="2_p0ybl"]
 [ext_resource type="Script" uid="uid://8bh4tveuvoqo" path="res://Andrew/Platinum/Data/Deck/P_DeckInfo.gd" id="3_8lst0"]
+[ext_resource type="Texture2D" uid="uid://dl6hsfm6nfnp1" path="res://GFX/GoldGFX/Cards/Stance_Passthrough.png" id="4_youli"]
 
 [resource]
 script = ExtResource("3_8lst0")
+Name = "Null Deck"
+Description = "Aint nothin"
+BackgroundGraphic = ExtResource("1_8lst0")
+ChromeGraphic = ExtResource("1_8lst0")
+ReverseGraphic = ExtResource("1_8lst0")
+StanceGraphics = Dictionary[int, Texture2D]({
+0: ExtResource("4_youli"),
+1: ExtResource("4_youli"),
+2: ExtResource("4_youli"),
+4: ExtResource("4_youli"),
+8: ExtResource("4_youli")
+})
 Cards = Dictionary[ExtResource("1_iodir"), int]({
-ExtResource("2_p0ybl"): 1
+ExtResource("2_p0ybl"): 10
 })
 metadata/_custom_type_script = "uid://8bh4tveuvoqo"

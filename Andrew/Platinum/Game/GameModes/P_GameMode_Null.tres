@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="P_GameMode" format=3 uid="uid://ehgsg2yl3xk2"]
+
+[ext_resource type="Script" uid="uid://8bh4tveuvoqo" path="res://Andrew/Platinum/Data/Deck/P_DeckInfo.gd" id="1_dyqxr"]
+[ext_resource type="Script" uid="uid://dmqlp5pq6bmv" path="res://Andrew/Platinum/Game/P_GameMode.gd" id="2_n3lbf"]
+
+[resource]
+script = ExtResource("2_n3lbf")
+Name = "Null"
+Description = "Nothing ever happens"
+Players = 0
+metadata/_custom_type_script = "uid://dmqlp5pq6bmv"

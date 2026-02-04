@@ -59,7 +59,6 @@ func _Composite(owner: Node, params: P_CardCompositor.CompositeParams) -> Textur
 		_Viewport.render_target_clear_mode = SubViewport.CLEAR_MODE_ALWAYS
 		_Viewport.size = Vector2i(600, 900)
 
-	print("rending card %s" % params.InstID)
 	_Background.texture = params.Background
 	_Graphic.texture = params.Graphic
 	_StanceTop.texture = params.Top
